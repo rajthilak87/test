@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Student Camp Booking Flow</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>02cecef5-c7af-49c5-b5e3-f4a3e8c76480</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>f0424207-bb06-4fb9-b59f-b237e9946076</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>'Welcome to Nurtem.com'</defaultValue>
+      <description></description>
+      <id>e9d3613a-d349-4f50-8494-7fd6db8b877f</id>
+      <masked>false</masked>
+      <name>subjectMsg</name>
+   </variable>
+</TestCaseEntity>

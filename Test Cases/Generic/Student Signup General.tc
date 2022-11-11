@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Student Signup General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6f4d6f48-9c03-47dd-b69a-a0934fb799c3</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>17a05193-71ea-4663-bd83-755aeffff860</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>48da0e3c-a2af-4cea-8795-0c9f7f986ec2</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

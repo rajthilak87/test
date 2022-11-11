@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search class</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a4408296-b2fe-46aa-82e7-1acb7e9c9bca</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>76a0c9ec-1deb-4cb2-a956-0ff5018d3605</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>'Welcome to Nurtem.com'</defaultValue>
+      <description></description>
+      <id>b3410dd2-b7cf-4f38-a929-1c62737c5f00</id>
+      <masked>false</masked>
+      <name>subjectMsg</name>
+   </variable>
+</TestCaseEntity>

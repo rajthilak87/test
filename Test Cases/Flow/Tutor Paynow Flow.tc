@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>TEST CASE SCENARIO: To check the functionality 
+of gmail 
+TEST CASE: Enter the valid user id and password</description>
+   <name>Tutor Paynow Flow</name>
+   <tag>login; user id; password</tag>
+   <comment></comment>
+   <testCaseGuid>6a7d0bb2-b795-45c9-bbdb-3485cdbab74f</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>42be58b7-27bb-4106-b002-31b69d651a80</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>a53b4423-d2ef-468b-9b5f-89dbe1b0085e</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

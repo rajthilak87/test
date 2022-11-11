@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Media Info General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f9a97cf4-ba42-45ca-aa2d-42b40aa21e77</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>11a8747e-bd5d-4406-8a38-ff4ef94352b8</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f6c8eb11-1392-4615-ab5e-8398f9b546db</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>0</defaultValue>
+      <description></description>
+      <id>ab3d52fe-4074-4207-9684-002b61f3e82e</id>
+      <masked>false</masked>
+      <name>elewidth</name>
+   </variable>
+</TestCaseEntity>

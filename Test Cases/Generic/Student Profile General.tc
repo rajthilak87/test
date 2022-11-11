@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>TEST CASE SCENARIO: To check the functionality 
+of gmail 
+TEST CASE: Enter the valid user id and password</description>
+   <name>Student Profile General</name>
+   <tag>login; user id; password</tag>
+   <comment></comment>
+   <testCaseGuid>a7e47194-9739-41de-a49c-e93fabf1c7a4</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>49d5faaf-00a0-4592-9409-c5d0c9ee2493</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>ffe00900-390d-4fc1-85e6-8efa2ef3739d</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>49d5faaf-00a0-4592-9409-c5d0c9ee2493</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>ffe00900-390d-4fc1-85e6-8efa2ef3739d</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

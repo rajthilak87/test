@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Enroling Camp General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1a1b5d63-c12e-4c8c-adc3-24c077bdab51</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>20b264c4-afc0-4ff2-98b0-6a02302d4923</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>6d75e71c-5f80-47ba-88dd-5216064ca859</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

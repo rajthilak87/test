@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>fblink</name>
+   <tag></tag>
+   <elementGuidId>34a6a53f-6ac0-4937-a389-55068ce171db</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>https://www.facebook.com/login.php?skip_api_login=1&amp;api_key=2053307541422015&amp;kid_directed_site=0&amp;app_id=2053307541422015&amp;signed_next=1&amp;next=https%3A%2F%2Fwww.facebook.com%2Fv2.3%2Fdialog%2Foauth%3Fapp_id%3D2053307541422015%26auth_type%26cbt%3D1628687340595%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df10c5336c292938%2526domain%253Dclass.nurtem.com%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fclass.nurtem.com%25252Ff2d141ae12b3402%2526relation%253Dopener%26client_id%3D2053307541422015%26display%3Dpopup%26domain%3Dclass.nurtem.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fclass.nurtem.com%252Fsign-in%26locale%3Den_US%26logger_id%3Df1ccd2f57b53cf4%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df147d517128fdc4%2526domain%253Dclass.nurtem.com%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fclass.nurtem.com%25252Ff2d141ae12b3402%2526relation%253Dopener%2526frame%253Df3fa2e699e2cdb2%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26return_scopes%3Dfalse%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv2.3%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&amp;cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df147d517128fdc4%26domain%3Dclass.nurtem.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fclass.nurtem.com%252Ff2d141ae12b3402%26relation%3Dopener%26frame%3Df3fa2e699e2cdb2%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&amp;display=popup&amp;locale=en_GB&amp;pl_dbl=0</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

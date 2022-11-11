@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>automation signup</description>
+   <name>Signup Automation Flow</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7cb76d22-3d56-4034-837c-b3b89bc959bf</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>61bd3a2a-c07d-4af4-9cfc-c94c14df6272</id>
+      <masked>false</masked>
+      <name>Username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6563b1ef-f301-4067-8e95-5095043ede7a</id>
+      <masked>false</masked>
+      <name>Password</name>
+   </variable>
+</TestCaseEntity>

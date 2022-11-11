@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search class General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f9b23366-2525-46c9-b517-77f4f975560d</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>35b5601b-5500-4ae4-aee3-62449c9bc761</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>87428ea5-3db3-4c77-ae91-630e3d8b3939</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

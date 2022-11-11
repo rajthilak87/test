@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>TEST CASE SCENARIO: To check the functionality 
+of gmail 
+TEST CASE: Enter the valid user id and password</description>
+   <name>Tutor Add Camp Flow</name>
+   <tag>login; user id; password</tag>
+   <comment></comment>
+   <testCaseGuid>a6453d3c-d2d2-4468-a18a-d9cb43069e07</testCaseGuid>
+</TestCaseEntity>

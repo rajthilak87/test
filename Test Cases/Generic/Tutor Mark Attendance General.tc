@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Mark Attendance General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c3c030e8-e2b8-4c1e-90e5-10192fad5d86</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>a2684572-90ac-4607-b463-c4c48a866fd3</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5b591d21-3206-4fcc-b24a-63ff7e28ac65</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+</TestCaseEntity>

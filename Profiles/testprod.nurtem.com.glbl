@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>testprod.nurtem.com</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description>NO TRAILING SLASH - Profile specific base url </description>
+      <initValue>'https://testprod.nurtem.com'</initValue>
+      <name>base_url</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>User name of a student role</description>
+      <initValue>'thilakdev@hotmail.com'</initValue>
+      <name>student_user_name</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Encripted password</description>
+      <initValue>'RkRYHE3Q9kyxyThKZ0YoAA=='</initValue>
+      <name>student_user_password</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Add Coupon General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6320d148-1c2b-4fd0-95de-9a09eca51a4c</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>665a3fcc-adaf-4a8b-a18d-ee9d912f47ba</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c596da4f-7e23-4fb5-a9b6-2a26124d59d7</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+</TestCaseEntity>

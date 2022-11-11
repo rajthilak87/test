@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Add Camp General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3e3b55f6-45f0-4ddd-abd9-47843b2bfc67</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>0f567e4a-b277-492e-9241-dbca7c343ceb</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>8961a66f-8f86-4e6f-8f0e-92f4629b11e8</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+</TestCaseEntity>

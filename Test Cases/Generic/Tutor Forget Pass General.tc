@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Forget Pass General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e9371e8e-689a-46a8-bec7-887bedeb33b9</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>7d8ee2e0-1213-4dd2-8a8a-d7fb048d0b9e</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>312ba065-9855-4d04-a464-a46d8d5c7f6e</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

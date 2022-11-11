@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Guest Class Booking Flow</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8e4631f7-4108-4080-9c76-fe8004cd71db</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>12b8abc0-7aed-40b3-9bca-7efa03b4ec7c</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>'Welcome to Nurtem.com'</defaultValue>
+      <description></description>
+      <id>6af1cbfd-734a-4f0d-92a3-7d3639e93cc3</id>
+      <masked>false</masked>
+      <name>subjectMsg</name>
+   </variable>
+</TestCaseEntity>

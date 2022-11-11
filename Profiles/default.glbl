@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description>sign-in page relative url</description>
+      <initValue>'sign-in'</initValue>
+      <name>sign_in</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>On successfull login Find the word Dashboard in the screen</description>
+      <initValue>'Dashboard'</initValue>
+      <name>on_login_success_find_word</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>invalid e mail id </description>
+      <initValue>'py@b@c@net.com'</initValue>
+      <name>invalid_email_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Entered the invalid user id and password </description>
+      <initValue>'Please input valid E-mail'</initValue>
+      <name>alert_for_invalid_user_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Please input your E-mail'</initValue>
+      <name>alert_for_blank_email</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Please input your Password!'</initValue>
+      <name>alert_for_blank_password</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Welcome to Nurtem.com'</initValue>
+      <name>emailSubjectMsg</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>false</initValue>
+      <name>proceed</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'D:\\nurtem-test'</initValue>
+      <name>projectRootPath</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'[Nurtem,Inc] Password Reset'</initValue>
+      <name>forgetPassSubjectMsg</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Activate my account'</initValue>
+      <name>linkText</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Reset Password'</initValue>
+      <name>frglinkText</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>basic url+profile</description>
+      <initValue>'profile/'</initValue>
+      <name>profile</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>5</initValue>
+      <name>timeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>base url with no ending slash</description>
+      <initValue>'https://testprod.nurtem.com/sign-in'</initValue>
+      <name>base_url</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'sign-up'</initValue>
+      <name>signup</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>camp request selection</description>
+      <initValue>''</initValue>
+      <name>Classtype</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://testprod.nurtem.com'</initValue>
+      <name>url</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>class categories seats left checking</description>
+      <initValue>0</initValue>
+      <name>seatsleft</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Forget Pass General 1</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>03a55fd9-7546-4a44-a220-c692d88474a4</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>dfc23181-074f-4e1c-8f03-f5341636bf79</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>37d88ce7-187d-42d8-9598-df27a49d7890</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

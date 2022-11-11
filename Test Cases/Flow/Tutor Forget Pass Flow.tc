@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Forget Pass Flow</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b86c679a-2532-4290-8e80-b97211a82acd</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>2672ffd4-267d-4278-9c63-f627d28dd4ea</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>'Welcome to Nurtem.com'</defaultValue>
+      <description></description>
+      <id>0a5cc002-03cc-40c5-9cf2-c081750e0330</id>
+      <masked>false</masked>
+      <name>subjectMsg</name>
+   </variable>
+</TestCaseEntity>

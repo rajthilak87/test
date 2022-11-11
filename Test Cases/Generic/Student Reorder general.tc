@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Student Reorder general</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>05889066-f5bf-478e-b2a2-4f69518545dc</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b80e2e8e-9515-48cd-9b06-5620be711eee</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>207c47a4-dca1-4b3f-8a65-12c1c64ce956</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

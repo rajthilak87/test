@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Add Notes General one</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8fa12ee3-3793-4f8e-8681-5951c16a4340</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d20b7bba-e05c-4c9f-915d-1910fdbd4e8d</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>cba3ad7b-e85f-40a5-b6ae-c03decbafa07</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Student Messge Flow</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3b0f493f-bf8f-41c7-a1ec-33d12fd693f7</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>6252f776-d7ab-475a-877c-9b643e500b1d</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>'Welcome to Nurtem.com'</defaultValue>
+      <description></description>
+      <id>bf018ff7-139a-4d17-9b9e-b405b59db180</id>
+      <masked>false</masked>
+      <name>subjectMsg</name>
+   </variable>
+</TestCaseEntity>

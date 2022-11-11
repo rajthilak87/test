@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Booking Check General1</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>755dd8e5-52d1-4e2c-9cc4-7836a31c5ba3</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c1bf93b0-800f-4285-956d-272b95ac0f8d</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>502bc0cb-d6da-468a-a1eb-44a8bccc0b59</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

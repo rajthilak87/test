@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor General Info General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>efc812f7-c782-46e7-a281-4511895449b0</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>89766a9e-aae1-459c-9f0f-5d6f47c4310d</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>657911e9-5713-4253-b39f-679b310598e3</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>0</defaultValue>
+      <description></description>
+      <id>c2e4a69f-17e5-40e8-852d-f94cdf5f7e58</id>
+      <masked>false</masked>
+      <name>elewidth</name>
+   </variable>
+</TestCaseEntity>

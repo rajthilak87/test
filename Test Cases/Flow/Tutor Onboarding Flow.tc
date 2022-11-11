@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This is a student flow from : registation => logn =></description>
+   <name>Tutor Onboarding Flow</name>
+   <tag>student onboarding</tag>
+   <comment></comment>
+   <testCaseGuid>05a73cf1-830d-4643-8e9f-fc8e57aaea45</testCaseGuid>
+</TestCaseEntity>

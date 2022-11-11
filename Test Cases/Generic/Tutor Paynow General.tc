@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Paynow General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c417c216-b612-4344-879b-1985df4f48a2</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c4bbaf11-41ec-46f8-8099-4f1415e72979</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>e2300a31-c016-43b7-820b-f5f5760c59f5</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

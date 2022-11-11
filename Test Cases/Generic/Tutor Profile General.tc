@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Profile General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>eeb8e86d-e1a3-4a4a-b0c3-92a3a2ca6086</testCaseGuid>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>18a6c641-3b49-4b92-8b99-41b1debe4467</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ba5fd77f-72ee-4618-b8d4-bd06239a8c1a</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+</TestCaseEntity>

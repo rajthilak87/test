@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Student Book Camp General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d99a891a-2e0f-4aa2-9cf6-b8f03a29772f</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>06b83728-e26c-4ece-b373-4e844e30fc90</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>0967f100-c8a4-43ff-ac6c-6a4b9b8cb95b</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

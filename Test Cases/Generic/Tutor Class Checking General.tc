@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Class Checking General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ad04e34d-d35d-4865-b512-f216f58f75da</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>a7ab71d2-ca95-4f83-8069-be1fac2c4c48</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>7ca2f0d9-206f-4904-9fa5-2dbb8a45015e</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Guest Bookaclass General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>08645c0a-2de2-48c3-8a88-123716f3d1ca</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ff8cb5fc-f8d0-4b8d-bf06-b16eae52774e</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>919913b4-eba6-4afe-9318-b96b8f51b577</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

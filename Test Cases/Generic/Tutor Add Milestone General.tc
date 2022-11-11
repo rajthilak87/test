@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Add Milestone General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4af95494-1632-49fa-9ab6-e8e0dcb75d03</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6e8c1624-f977-44d2-9ef0-641bd20b17fd</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>6250e705-53af-47fd-a62a-627e05f2d3d7</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Reassign General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2aab7067-13e7-4dd8-9774-ddd238c14f4b</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bb4bfa68-5b70-4f2c-a3ae-31a46091806d</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>075de873-994c-4ea4-a8cc-2fcc14c83ffc</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

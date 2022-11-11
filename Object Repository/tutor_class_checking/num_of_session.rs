@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>num_of_session</name>
+   <tag></tag>
+   <elementGuidId>30c18a77-d345-449d-9267-d623e6fc1bb4</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>//body/div[@id='root']/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div[2]/div[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>CSS</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

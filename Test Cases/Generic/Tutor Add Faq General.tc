@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Tutor Add Faq General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c5ec4728-8328-4fb6-9c6f-2b1697191929</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>23cb6efb-17de-40bb-a980-d53258824437</id>
+      <masked>false</masked>
+      <name>testCaseName</name>
+   </variable>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>7319d974-b436-4d59-bcbb-6fa250e3ffa8</id>
+      <masked>false</masked>
+      <name>testCaseData</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>path</name>
+   <tag></tag>
+   <elementGuidId>33c6ad44-7ce2-4210-8095-9ddc5d21a07a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>path</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>d</name>
+      <type>Main</type>
+      <value>M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/div[1]/div[@class=&quot;page-container&quot;]/div[@class=&quot;page-body-container&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;row&quot;]/div[@class=&quot;col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9&quot;]/div[1]/div[@class=&quot;row&quot;]/div[@class=&quot;col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4&quot;]/div[@class=&quot;nurtem-card-design py-4 mt-4 mb-3&quot;]/div[@class=&quot;row justify-content-center align-items-center&quot;]/a[1]/div[@class=&quot;col&quot;]/div[@class=&quot;tutor-add&quot;]/span[@class=&quot;icon&quot;]/span[@class=&quot;anticon anticon-plus&quot;]/svg[1]/path[2]</value>
+   </webElementProperties>
+</WebElementEntity>
