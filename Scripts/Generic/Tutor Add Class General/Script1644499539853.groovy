@@ -179,32 +179,33 @@ try {
 	def dayArr = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 
 	val1 = testCaseData.day_of_week
-
+	print("Value is " + val1 + " ")
+	
 	val = "${val1.toLowerCase()}"
 	//println('week is - '+val)
 	index = dayArr.findIndexOf({
 			it == val
 		})
-    
-
+	print("Index is " + index + " ")
 	
-//	TestObject day_of_week = findTestObject('Object Repository/tutor-add-class/day_of_week')
-	week_day = findTestObject('Object Repository/tutor-add-class/day_of_week')
+	TestObject day_of_week = findTestObject('Object Repository/tutor-add-class/day_of_week')
+//	week_day = findTestObject('Object Repository/tutor-add-class/day_of_week')
 //	String csvLine = "IND,PAK,USA,AUS";
-	def list = week_day
-	for (def item : list) {
-	print(item)
-	}
-		
+//	def list = week_day
+//	for (def item : list) {
+//	print(item)
+//	}
+//		
 	def arr1 = []
 
 	for (int i = 0; i <= index; i++) {
 		arr1.add(Keys.DOWN)
 	}
 //	arr1.add(Keys.DOWN)
-	WebUI.delay(1)
+	WebUI.delay(2)
 	arr1.add(Keys.ENTER)
-
+	print("Day of the week is " + day_of_week + " ")
+	
 	WebUI.sendKeys(day_of_week, Keys.chord(arr1))
 
 	WebUI.delay(2)
@@ -253,7 +254,7 @@ try {
 
 	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 
-	WebUI.delay(1)  
+	WebUI.delay(1)
 
 		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
 	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
@@ -329,9 +330,9 @@ try {
 						}
 						WebUI.delay(1)
 						opening_time.sendKeys(Keys.ENTER)
-					    WebUI.delay(1)
-//						WebElement close_time = driver.findElement(By.id(closeTime))	
-						def y = '//input[@id="'+ closeTime +'"]'					
+						WebUI.delay(1)
+//						WebElement close_time = driver.findElement(By.id(closeTime))
+						def y = '//input[@id="'+ closeTime +'"]'
 						WebElement close_time = driver.findElement(By.xpath(y))
 						print(y)
 						//WebUI.delay(1)
@@ -348,7 +349,7 @@ try {
 									close_time.sendKeys(close1)
 								}
 								//WebUI.delay(1)
-								close_time.sendKeys(Keys.ENTER) 
+								close_time.sendKeys(Keys.ENTER)
 	//WebUtil.robot.keyPress(KeyEvent.VK_TAB)
 	//WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
 	//WebUtil.robot.keyPress(KeyEvent.VK_TAB)
@@ -459,7 +460,7 @@ try {
 
 		println('Value of a is : ' + a)
 
-		if (a.contains('Class created successfully.')) {
+		if (a.contains('success')) {
 			WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add class submitted successfully :' + a)
 		} else {
 			WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add class submission has error :' + a, true)
