@@ -81,7 +81,8 @@ String currentScreenUrl = WebUI.getUrl()
 		print ('data in which day is :'+ whichday)
 //		String panel = testCaseData.panel
 //		String xpath1 = "//div[@role='tab'][normalize-space()='$whichday']"
-		String xpath1 = "//div[@class='time-book-set-card-body']//span[text()='$whichday']"
+		//span[normalize-space()='Thursday']
+		String xpath1 = "//span[normalize-space()='$whichday']"
 		print("the xpath is -"+xpath1)
 		WebElement element1 = driver.findElement(By.xpath(xpath1))
 		element1.click()
