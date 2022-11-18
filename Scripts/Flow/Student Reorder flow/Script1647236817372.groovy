@@ -24,7 +24,7 @@ import java.awt.event.KeyEvent as KeyEvent
 
 String testCaseName = 'Student Reorder'
 def filterBy = ['reorder', 'student']
-def data = WebUtil.getData(GlobalVariable.projectRootPath + '\\TestDataXls\\Student reorder.xlsx', 'reorder', filterBy)
+def data = WebUtil.getData(GlobalVariable.projectRootPath + '\\TestDataXls\\Student_reorder.xlsx', 'reorder', filterBy)
 WebUtil.stopOnEmptyData(data)
 for (def row : data)
 	{

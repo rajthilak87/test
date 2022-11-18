@@ -21,6 +21,7 @@ import com.netkathir.Util as WebUtil
 String testCaseName = 'Student Onboarding Flow'
 def filterBy = ['signup', 'student']
 def data = WebUtil.getData(GlobalVariable.projectRootPath + '\\TestDataXls\\signup.xlsx', 'signup', filterBy)
+println (data)
 WebUtil.stopOnEmptyData(data)
 for (def row : data)
 	{
@@ -34,7 +35,7 @@ for (def row : data)
 			{
 				WebUI.delay(5)
 				WebUtil.reportAndtakeScreenshot(testCaseName, row, 'Student signup successfull')
-				WebUI.delay(5)
+			/*	WebUI.delay(5)
 				WebUtil.verifyMail(row.mailserver, row.username, row.e_password, GlobalVariable.emailSubjectMsg, GlobalVariable.linkText, testCaseName, row)
 				WebUI.delay(20)
 				boolean EmailVerificationSuccess = WebUtil.verifyPresent('Object Repository/generic/success', testCaseName, row)
@@ -57,10 +58,10 @@ for (def row : data)
 			else
 				{
 					WebUtil.reportAndtakeScreenshot(testCaseName, row, 'Signup Failed',true)
-				}
+				}  */
 	}
     
     WebUI.closeBrowser(FailureHandling.CONTINUE_ON_FAILURE)
-//}
+}
 
 WebUtil.generateReport(testCaseName, filterBy)

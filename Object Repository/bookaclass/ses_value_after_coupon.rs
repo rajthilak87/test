@@ -6,12 +6,12 @@
    <elementGuidId>a51f8c27-8f7b-4a4c-92a2-037e504f632b</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//body[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[2]
+</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//tbody/tr[@class='ant-table-row ant-table-row-level-0']/td[@class='ant-table-cell']/div[@class='full-width']/div[2]
-</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
