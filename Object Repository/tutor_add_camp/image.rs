@@ -6,12 +6,11 @@
    <elementGuidId>bdebd83b-ffca-4001-bb31-5145b41c9b9e</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='ant-upload-text']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//span[@class='ant-upload']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -24,7 +24,7 @@ import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import java.awt.event.KeyEvent as KeyEvent
 
 try {
-		def div_addcamp	= 		"//a[normalize-space()='Add a Camp']"
+		def div_addcamp	= 		"//a[@href='/tutor/update-camp']//button[@type='button']"
 		def addcamp   	=		"(//button[@type='submit'])[1]"
 		def addon_add	=		"//button[@type='button']//span[contains(text(),'Add Now')]"
 		def addon_cost	=		"//input[@class='ant-input-number-input' and @name='new_addon_cost']"

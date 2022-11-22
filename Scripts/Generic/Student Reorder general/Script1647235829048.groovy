@@ -30,21 +30,28 @@ import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 try {
-def my_class = 	"//span[contains(text(),'My Classes')]"
-WebDriver driver = DriverFactory.getWebDriver()
-driver.findElement(By.xpath(my_class)).click()
+//def my_class = 	"//span[contains(text(),'My Classes')]"
+/*def my_class = 	"//a[@href='/user/class-details']//span"
 WebUI.delay(5)
-if(testCaseData.which_user == 'parent')
-{
-}else
+driver.findElement(By.xpath(my_class)).click()
+WebUI.delay(2)*/
+	
+	WebDriver driver = DriverFactory.getWebDriver()
+	WebUI.click(findTestObject('Object Repository/Reorder/My_Classes'))//a[@href='/user/class-details']
+	WebUI.delay(2)
+	
+if(testCaseData.which_user == 'depen')
 	{
 		WebUI.click(findTestObject('Object Repository/message/which user'))
 		WebUI.delay(2)
 	}
 String ExpectedValue = testCaseData.class_name.trim()
 String depnvalue = testCaseData.depn_name.trim()
-WebElement Table = driver.findElement(By.xpath("//div[@class='nurtem-card-design nurtem-table py-4 mt-2 mb-3']"))
+table_loc = "//div[@class='nurtem-card-design nurtem-table py-4 mt-2 mb-3']"
+WebUI.delay(2)
+WebElement Table = driver.findElement(By.xpath(table_loc))
 
+WebUI.delay(2)
 List<WebElement> Rows = Table.findElements(By.tagName('tr'))	
 println('No. of rows: ' + Rows.size())
 def k=2
@@ -69,7 +76,10 @@ table: for (int i = 1; i < Rows.size(); i++)
 										{
 											WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Correct Class - '+Cols.get(j).getText())
 											e=2
-											Cols.get(6).findElement(By.tagName('button')).click()
+											Cols.get(6).findElement(By.xpath('//tbody//button[2]//span[1]')).click()
+											WebUI.delay(2)
+											WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+											WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
 											WebUI.delay(2)
 											WebUtil.robot.keyPress(KeyEvent.VK_TAB)
 											WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
