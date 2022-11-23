@@ -196,6 +196,7 @@ table: for (int i = 1; i < Rows.size(); i++)
 						}
 				}
 def b = testCaseData.total_tax
+if (testCaseData.tax_per_tutor != '0') {
 println("value of a is" + b)
 BigDecimal b6 = new BigDecimal(b);
 BigDecimal b7 = b6.stripTrailingZeros();
@@ -231,7 +232,29 @@ if ( b15 == b5 )
 else
 	{
 		WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Total Price is incorrect : '+resu+ ' , Actual price is ' + b5, true)
-	}
+	}}
+
+else {
+	def c = testCaseData.Grand_tot
+	println("value of a is" + c)
+	BigDecimal b4 = new BigDecimal(c);
+	BigDecimal b5 = b4.stripTrailingZeros();
+	def resu = WebUI.getText(findTestObject('Object Repository/bookaclass/read_tax_value'))
+	resu = resu.substring(1);
+	resu.toString()
+	println("result is" + resu)
+	BigDecimal b14 = new BigDecimal(resu);
+	BigDecimal b15 = b14.stripTrailingZeros();
+	if ( b15 == b5 )
+		{
+			WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Total price is correct : ' + resu)
+		}
+	else
+		{
+			WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Total Price is incorrect : '+resu+ ' , Actual price is ' + b5, true)
+		}
+}
+
 if (testCaseData.check_coupon_value == '0')
 	{
 
@@ -308,7 +331,7 @@ if (testCaseData.check_coupon_value == '0')
 
 	}
 WebUI.scrollToElement(findTestObject('Object Repository/bookaclass/footer_scrolldown'), 3)
-/*err = WebUtil.isErrorExists()
+err = WebUtil.isErrorExists()
 if (err.size() > 0)
 {
 	WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Cart Page : ' + err.toString())
@@ -317,7 +340,7 @@ else
 {
 WebUtil.clickElement('Object Repository/bookaclass/paynowbtn')
 WebUtil.reportAndtakeScreenshotIfErrorExists(testCaseName, testCaseData,'Cart Page is in progress')
-}*/
+}
 WebUI.delay(1)
 WebUtil.clickElement('Object Repository/bookaclass/paynowbtn')
 	WebUI.delay(1)
