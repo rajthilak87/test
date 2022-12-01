@@ -51,6 +51,7 @@ WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData,'Add tutor has error 
 if (testCaseData.Add_profile == 'yes')
 	{
 		WebUI.click(findTestObject("Object Repository/add_tutor/Yes button"))
+		
 	}
 	else
 	{

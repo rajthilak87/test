@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='ant-select ant-select-single ant-select-show-arrow']//span[@class='ant-select-selection-search']</value>
+         <value>//input[@id='gender']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

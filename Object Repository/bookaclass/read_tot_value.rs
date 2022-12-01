@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,'item-text-bold-16')][normalize-space()='$0.45']</value>
+         <value>//div[@class='item-text-bold-16']</value>
       </entry>
       <entry>
          <key>BASIC</key>

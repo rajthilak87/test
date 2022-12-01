@@ -6,12 +6,11 @@
    <elementGuidId>3011a984-698f-4887-8077-4acae566caf7</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//button[@class='ant-btn my-class-tab-action-btn']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//span[@aria-label='plus']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -47,10 +47,10 @@ for (def row : data) {
     WebUI.callTestCase(findTestCase('Generic/Tutor Login General'), [('testCaseName') : testCaseName, ('testCaseData') : row], 
         FailureHandling.CONTINUE_ON_FAILURE)
     String currentUrl = WebUI.getUrl(FailureHandling.CONTINUE_ON_FAILURE).toString()
-    if (currentUrl.contains('dashboard')) {
+    //if (currentUrl.contains('dashboard')) {
         WebUI.callTestCase(findTestCase('Generic/Tutor Add Tutor General'), [('testCaseName') : testCaseName, ('testCaseData') : row], 
             FailureHandling.CONTINUE_ON_FAILURE)
-    }
+    //}
 }
 
 String currentUrl1 = WebUI.getUrl(FailureHandling.CONTINUE_ON_FAILURE).toString()
@@ -60,7 +60,7 @@ if (currentUrl1.contains('business-profile')) {
     data = WebUtil.getData(GlobalVariable.projectRootPath + '\\TestDataXls\\profile-tutor.xlsx', 'profile', filterBy)
     WebUtil.stopOnEmptyData(data)
     for (def row : data) {
-        WebUI.callTestCase(findTestCase('Generic/Tutor Profile General'), [('testCaseName') : testCaseName, ('testCaseData') : row], 
+        WebUI.callTestCase(findTestCase('Generic/Tutor Add Tutor Profile General'), [('testCaseName') : testCaseName, ('testCaseData') : row], 
             FailureHandling.CONTINUE_ON_FAILURE)
     }
 }

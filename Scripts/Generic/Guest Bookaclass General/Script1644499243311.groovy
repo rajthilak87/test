@@ -27,6 +27,7 @@ import com.netkathir.Util as WebUtil
 
 try {
 WebDriver driver = DriverFactory.getWebDriver()
+String currentScreenUrl = WebUI.getUrl()
 WebUI.delay(10)
 // if (currentScreenUrl.contains('dashboard')) {	
     WebUI.setText(findTestObject('Object Repository/guest_ckt/search'), testCaseData.search)
@@ -59,19 +60,20 @@ WebUI.delay(10)
 			}
 		}	   
 		WebUI.delay(3)	
-		WebUI.scrollToElement(findTestObject('Object Repository/bookaclass/findbook button'), 60)
+		WebUtil.clickElement('Object Repository/bookaclass/findbook button')
 		WebUI.delay(1)
 		def whichday = testCaseData.which_day
 		print ('data in which day is :'+whichday)
-		String panel = testCaseData.panel
+		//String panel = testCaseData.panel
 		//driver.findElement(By.xpath('//*[contains(@class,"time-book-set time-available")]')).click()
 		//driver.findElement(By.xpath('//*[contains(@class,"time-book-set-card card-back-flip")]')).click()	 		 		 				 		 		
-		String xpath1 = "//div[@role='tab'][normalize-space()='$whichday']"
+		String xpath1 = "//span[normalize-space()='$whichday']"
 		print("the xpath is -"+xpath1)
 		WebElement element1 = driver.findElement(By.xpath(xpath1))
 		element1.click()
-		WebUI.delay(1)	
-		String Xpath3 = "//div[@id='rc-tabs-1-panel-$panel']//div[@class='time-book-set-card-header'][normalize-space()='Available']"
+		WebUI.delay(3)	
+		
+		/*String Xpath3 = "//div[@id='rc-tabs-1-panel-$panel']//div[@class='time-book-set-card-header'][normalize-space()='Available']"
 		if(driver.findElements(By.xpath(Xpath3)).size() != 0)
 		{	
 		 Xpath3 = "//div[@id='rc-tabs-1-panel-$panel']//div[@class='time-book-set-card-header'][normalize-space()='Available']"		
@@ -89,9 +91,10 @@ WebUI.delay(10)
 		WebUI.delay(1)	  
 		String Xpath4 = "//div[@id='rc-tabs-1-panel-$panel']//div[@class='react-card-back']//div[@class='time-book-set-card-body']"
 		WebElement element3 = driver.findElement(By.xpath(Xpath4))
-		element3.click()
-	driver.findElement(By.xpath('//a[normalize-space()="Guest checkout"]')).click()	
-	WebUI.delay(1)	
+		element3.click()*/
+		
+	driver.findElement(By.xpath("//span[normalize-space()='Guest checkout']")).click()	
+	WebUI.delay(3)	
 	WebUI.setText(findTestObject('Object Repository/guest_ckt/firstname'), testCaseData.firstname)	
 	WebUI.setText(findTestObject('Object Repository/guest_ckt/mobile_number'), testCaseData.mobile_number)	
 	WebUI.setText(findTestObject('Object Repository/guest_ckt/email'), testCaseData.email)	
@@ -168,24 +171,30 @@ WebUI.delay(10)
 	WebUI.scrollToElement(findTestObject('Object Repository/guest_ckt/bottom'), 3)	
 	driver.findElement(By.xpath('//span[normalize-space()="Next"]')).click()	
 	WebUI.delay(1)		
-	WebUtil.clickElement('Object Repository/guest_ckt/to_whom')		
-	WebUI.delay(1)		
-	WebUtil.robot.keyPress(KeyEvent.VK_DOWN)	
-	WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)			
-	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)	
-	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)		
-	WebUI.delay(1)	
-	WebUtil.clickElement('Object Repository/bookaclass/to_whom')	
+//	WebUtil.clickElement('Object Repository/guest_ckt/to_whom')		
+//	WebUI.delay(1)		
+//	WebUtil.robot.keyPress(KeyEvent.VK_DOWN)	
+//	WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)			
+//	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)	
+//	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)		
+//	WebUI.delay(1)	
+//	WebUtil.clickElement('Object Repository/bookaclass/to_whom')	
 		////WebUI.delay(1)			
 		String count = testCaseData.dept_count
 		
 		//if (count>0)
 		//{	
-			String val = testCaseData.to_whom
+			String kk = testCaseData.to_whom
+			int val =  kk.toInteger()
+			if(val!=0) {
+				WebUtil.clickElement('Object Repository/bookaclass/to_whom')
 		for (int i=0;i<val;i++)
 			{		
-				WebUtil.robot.keyPress(KeyEvent.VK_DOWN)		
-				WebUtil.robot.keyPress(KeyEvent.VK_ENTER)	
+				WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+				WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+				WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+				WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+			}
 			}
 		//}
 				//WebUtil.robot.keyPress(KeyEvent.VK_TAB)	
@@ -251,7 +260,8 @@ WebUI.delay(10)
 								WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Monthly Price is incorrect'+result+ ' , Actual price is : ' + b3, true)
 							}
 					}
-	def b = testCaseData.total_tax	
+	def b = testCaseData.total_tax
+	if (testCaseData.tax_per_tutor != '0') {
 	println("value of a is" + b)	
 	BigDecimal b6 = new BigDecimal(b);
 	BigDecimal b7 = b6.stripTrailingZeros();	
@@ -287,8 +297,30 @@ WebUI.delay(10)
 	else
 		{
 			WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Total Price is incorrect : '+resu+ ' , Actual price is ' + b5, true)
-		}
-if (testCaseData.check_coupon_value == '0')
+		}}
+	
+	else {
+		def c = testCaseData.Grand_tot
+		println("value of a is" + c)
+		BigDecimal b4 = new BigDecimal(c);
+		BigDecimal b5 = b4.stripTrailingZeros();
+		def resu = WebUI.getText(findTestObject('Object Repository/bookaclass/read_tax_value'))
+		resu = resu.substring(1);
+		resu.toString()
+		println("result is" + resu)
+		BigDecimal b14 = new BigDecimal(resu);
+		BigDecimal b15 = b14.stripTrailingZeros();
+		if ( b15 == b5 )
+			{
+				WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Total price is correct : ' + resu)
+			}
+		else
+			{
+				WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Total Price is incorrect : '+resu+ ' , Actual price is ' + b5, true)
+			}
+	}
+	
+if (testCaseData.check_coupon_value == 'yes')
 		{
 	
 			WebUI.setText(findTestObject('bookaclass/coupon_value'), testCaseData.coupon_value)
