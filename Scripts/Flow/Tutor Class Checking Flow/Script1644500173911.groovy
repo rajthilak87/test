@@ -33,11 +33,17 @@ for (def row : data)
 		WebUI.deleteAllCookies()
 		//login with credential
 		WebUI.callTestCase(findTestCase('Generic/Tutor Login General'), [('testCaseName') : testCaseName, ('testCaseData') : row], 
-        FailureHandling.CONTINUE_ON_FAILURE)	
+        FailureHandling.CONTINUE_ON_FAILURE)
+		if(testCaseData.tutortyp == 'bus')
+		{	
 		  WebUI.callTestCase(findTestCase('Generic/Tutor Class category check general'), [('testCaseName') : testCaseName, ('testCaseData') : row],
 		  FailureHandling.CONTINUE_ON_FAILURE)
+		}
+		else
+		{
 		   WebUI.callTestCase(findTestCase('Generic/Tutor Class Checking General'), [('testCaseName') : testCaseName, ('testCaseData') : row],
 			   FailureHandling.CONTINUE_ON_FAILURE)
+		}
 	   }
 	 filterBy = ['Class_check', 'student']
 	 data = WebUtil.getData(GlobalVariable.projectRootPath + '\\TestDataXls\\tutor_add_class_501.xlsx', 'Sheet1', filterBy)

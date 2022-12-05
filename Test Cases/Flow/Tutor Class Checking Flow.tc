@@ -7,6 +7,18 @@ TEST CASE: Enter the valid user id and password</description>
    <tag>login; user id; password</tag>
    <comment></comment>
    <testCaseGuid>af63fc12-0edd-4051-964e-59221f5e3f5e</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>f67c9913-b988-4713-a798-670581754a0e</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>56ab7d1f-d967-41ee-85e5-ae7f504f5b66</variableId>
+   </variableLinks>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>

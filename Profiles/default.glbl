@@ -46,7 +46,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'D:\\test'</initValue>
+      <initValue>'D:\\nurtem\\test'</initValue>
       <name>projectRootPath</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
