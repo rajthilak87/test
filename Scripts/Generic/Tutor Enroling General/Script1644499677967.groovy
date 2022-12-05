@@ -229,7 +229,7 @@ else
 			//WebUI.scrollToElement(findTestObject('Object Repository/bookaclass/enrol/scroll'),1)
 			
 			//WebUI.click(findTestObject('Object Repository/bookaclass/enrol/pay button'))
-			WebElement ele = driver.findElement(By.xpath("//button[@class='ant-btn ant-btn PayNowBtn']"));
+			WebElement ele = driver.findElement(By.xpath("//span[normalize-space()='Enroll Student']"));
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click()", ele);
 			err = WebUtil.isErrorExistsEnroll()

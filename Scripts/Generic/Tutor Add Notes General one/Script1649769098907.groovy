@@ -33,7 +33,7 @@ try {
 	WebUI.setText(findTestObject('Object Repository/Notes/Notes text'), testCaseData.notes)
 	WebUI.delay(1)
 	WebUI.click(findTestObject('Object Repository/Notes/Submit'))
-	WebUI.delay(1)
+	WebUI.delay(4)
 }
 catch (org.openqa.selenium.NoSuchElementException | com.kms.katalon.core.exception.StepFailedException  e)
 {

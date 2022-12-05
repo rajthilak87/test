@@ -237,18 +237,16 @@ public class Util {
 				//	GlobalVariable.proceed =true;
 			}
 			/*if (a.contains("User login successfully."))
-			{
-
-				Util.reportAndtakeScreenshot(tcName, data, 'Student Login Form submitted successfully :' +  a)
-			} else if (a.contains("Warning"))
-			{
-
-				Util.reportAndtakeScreenshot(tcName, data, 'Student Login Form submitted successfully :' +  a)
-			}
-			else {
-				Util.reportAndtakeScreenshot(tcName, data, 'Student Login Form has error :' +  a,true)
-				//	GlobalVariable.proceed =true;
-			}*/
+			 {
+			 Util.reportAndtakeScreenshot(tcName, data, 'Student Login Form submitted successfully :' +  a)
+			 } else if (a.contains("Warning"))
+			 {
+			 Util.reportAndtakeScreenshot(tcName, data, 'Student Login Form submitted successfully :' +  a)
+			 }
+			 else {
+			 Util.reportAndtakeScreenshot(tcName, data, 'Student Login Form has error :' +  a,true)
+			 //	GlobalVariable.proceed =true;
+			 }*/
 			//}
 
 		}catch (StepFailedException e) {
@@ -1138,14 +1136,14 @@ public class Util {
 			String fileName = GlobalVariable.projectRootPath + "\\Screenshots\\" + tcName + ".xlsx";
 			def file = new File(fileName);
 			if(file.exists()) {
-				def excelData = ExcelFactory.getExcelDataWithDefaultSheet(fileName,"Error_report", true);			
-								//def existingRows = excelData.getAllData()			
-								FileInputStream fisxls = new FileInputStream(fileName)
-								XSSFWorkbook workbook = new XSSFWorkbook(fisxls)			
+				def excelData = ExcelFactory.getExcelDataWithDefaultSheet(fileName,"Error_report", true);
+				//def existingRows = excelData.getAllData()
+				FileInputStream fisxls = new FileInputStream(fileName)
+				XSSFWorkbook workbook = new XSSFWorkbook(fisxls)
 				if (workbook.getNumberOfSheets() != 1) {
-					 excelData = ExcelFactory.getExcelDataWithDefaultSheet(fileName,"Error_report", true);		
-					  excelData.changeSheet("Error_report _2");
-								def existingRows = excelData.getAllData();			
+					excelData = ExcelFactory.getExcelDataWithDefaultSheet(fileName,"Error_report", true);
+					excelData.changeSheet("Error_report _2");
+					def existingRows = excelData.getAllData();
 					CreationHelper createHelper = workbook.getCreationHelper();
 					XSSFSheet sheet = workbook.getSheet("Error_report _2");
 
