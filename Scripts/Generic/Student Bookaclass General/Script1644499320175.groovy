@@ -100,7 +100,13 @@ String currentScreenUrl = WebUI.getUrl()
 		}
 		WebUtil.clickElement('Object Repository/bookaclass/flip-card-two')	*/
 						
-		String count = testCaseData.dept_count
+	// To Whom click first parent and dept
+				
+		def depfirst = testCaseData.deptfirst
+		println("the depfirst count-"+ depfirst)
+		if( depfirst == "0" ) {
+			
+			String count = testCaseData.dept_count
 			String kk = testCaseData.to_whom
 			int val =  kk.toInteger()
 			if(val!=0) {
@@ -112,7 +118,28 @@ String currentScreenUrl = WebUI.getUrl()
 				WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
 				WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 			}
+		}	
 		}
+		
+		String count = testCaseData.dept_count
+		String kk = testCaseData.to_whom
+		int val =  kk.toInteger()
+		if(val!=0) {
+			WebUtil.clickElement('Object Repository/bookaclass/to_whom')
+	for (int i=0;i<val;i++)
+		{
+			WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+			WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+			WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+			WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+			WebUtil.robot.keyPress(KeyEvent.VK_UP)
+			WebUtil.robot.keyRelease(KeyEvent.VK_UP)
+			WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+			WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+		}
+	}
+		
+		
 				if (testCaseData.teaching_type == '0')
 					{
 						WebUtil.setVal(findTestObject('bookaclass/session'), testCaseData.session)

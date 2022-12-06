@@ -34,6 +34,9 @@ for (def row : data)
 		//	login with that credential
 		WebUI.callTestCase(findTestCase('Generic/Tutor Login General'), [('testCaseName') : testCaseName, ('testCaseData') : row], FailureHandling.CONTINUE_ON_FAILURE)
 		WebUI.delay(04)
+//		WebUI.click(findTestObject('Object Repository/tutor-add-class/add_class_link'))
+		WebUI.callTestCase(findTestCase('Generic/Tutor Mark Attendance General'), [('testCaseName') : testCaseName, ('testCaseData') : row],
+			FailureHandling.CONTINUE_ON_FAILURE)
 		String currentUrl = WebUI.getUrl(FailureHandling.CONTINUE_ON_FAILURE).toString()
 		if (currentUrl.contains('dashboard'))
 			{	
