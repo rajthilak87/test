@@ -77,16 +77,19 @@ String currentScreenUrl = WebUI.getUrl()
 		WebUI.delay(3)
 		WebUtil.clickElement('Object Repository/bookaclass/findbook button')
 		WebUI.delay(3)
-		def whichday = testCaseData.which_day
-		print ('data in which day is :'+ whichday)
-//		String panel = testCaseData.panel
-//		String xpath1 = "//div[@role='tab'][normalize-space()='$whichday']"
-		//span[normalize-space()='Thursday']
-		String xpath1 = "//span[normalize-space()='$whichday']"
-		print("the xpath is -"+xpath1)
-		WebElement element1 = driver.findElement(By.xpath(xpath1))
-		element1.click()
-		WebUI.delay(1)
+		
+		//book a sloat
+		
+//		def whichday = testCaseData.which_day
+//		print ('data in which day is :'+ whichday)
+//
+//		String xpath1 = "//span[normalize-space()='$whichday']"
+//		print("the xpath is -"+xpath1)
+//		WebElement element1 = driver.findElement(By.xpath(xpath1))
+//		element1.click()
+//		WebUI.delay(1) 
+		
+		
 	/*	def flip = WebUI.getText(findTestObject('Object Repository/bookaclass/flip-card'))
 		print("the flip is -"+xpath1)
 		if(flip == "AVAILABLE") {
