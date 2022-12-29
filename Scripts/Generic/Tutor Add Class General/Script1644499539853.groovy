@@ -132,7 +132,7 @@ try {
 
 //	WebUI.setText(findTestObject('Object Repository/tutor-add-class/input__years_of_teaching'), testCaseData.years_of_teaching)
 	WebUI.delay(2)
-	def classFrequencyArr = ['Every week', 'Every alternative week', 'Once in a month on', 'Twice in a month', 'Thrice in a month'
+	def classFrequencyArr = ['Every week', 'Every alternative week', 'Once in a month', 'Twice in a month', 'Thrice in a month'
 		, 'Four times in a month']
 
 	TestObject classFrequency = findTestObject('Object Repository/tutor-add-class/input_occurrence_type')
@@ -154,9 +154,10 @@ try {
 	WebUI.delay(2)
 	WebUI.sendKeys(classFrequency, Keys.chord(arr))
 	WebUI.delay(2)
-	if (testCaseData.teaching_type == 'individual') {
-		WebUI.setText(findTestObject('Object Repository/tutor-add-class/duration'), testCaseData.duration)
-	}
+	
+//	if (testCaseData.teaching_type == 'individual') {
+//		WebUI.setText(findTestObject('Object Repository/tutor-add-class/duration'), testCaseData.duration)
+//	}
 	
 //	days_count = testCaseData.numofdays.toInteger()
 	def days = []
@@ -181,6 +182,10 @@ try {
 		WebUI.delay(2)		
 		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)		
 		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+		
+		if (testCaseData.teaching_type == 'individual') {
+			WebUI.setText(findTestObject('Object Repository/tutor-add-class/duration'), testCaseData.duration)
+		}
 		
 	//	WebUI.setText(findTestObject('Object Repository/tutor-add-class/select_day'), val)
 	
@@ -228,12 +233,13 @@ try {
 				def start1
 				if (testCaseData.teaching_type == 'individual')
 					{
-						start1 = (testCaseData.start_time1).substring(0, 5)
+						start1 = (testCaseData.start_time1).substring(0, 7)
 						println('start time is : ' + start1)
 						opening_time.sendKeys(start1)
 					}
 					else
 						{
+//							start1 = (testCaseData.start_time1).substring(0, 5)
 							start1 = (testCaseData.start_time1).substring(0, 7)
 							println('start time is : ' + start1)
 							println('start time is : ' + opening_time)
@@ -248,7 +254,8 @@ try {
 						def close1
 						if (testCaseData.teaching_type == 'individual')
 							{
-								close1 = (testCaseData.close_time1).substring(0, 5)
+//								close1 = (testCaseData.close_time1).substring(0, 5)
+								close1 = (testCaseData.close_time1).substring(0, 7)
 								println('start time is : ' + close1)
 								close_time.sendKeys(close1)
 							}

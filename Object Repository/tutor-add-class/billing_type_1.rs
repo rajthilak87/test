@@ -6,10 +6,6 @@
    <elementGuidId>ce9b7f0f-085a-4941-9039-5200556aa4e9</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//span[normalize-space()='Monthly']</value>
-      </entry>
-      <entry>
          <key>BASIC</key>
          <value>//*[@type = 'radio']</value>
       </entry>
@@ -20,6 +16,10 @@
       <entry>
          <key>IMAGE</key>
       </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[normalize-space()='Season']</value>
+      </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>true</useRalativeImagePath>
@@ -29,7 +29,6 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>0db132ac-35ea-40a0-9f43-7456991316c9</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -37,7 +36,6 @@
       <name>type</name>
       <type>Main</type>
       <value>radio</value>
-      <webElementGuid>643ff341-96a6-4d0a-9992-c118ce8c8cc6</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -45,7 +43,6 @@
       <name>class</name>
       <type>Main</type>
       <value>ant-radio-input</value>
-      <webElementGuid>61f299a6-4014-4fbe-a887-6012c36c3a85</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -53,7 +50,6 @@
       <name>value</name>
       <type>Main</type>
       <value>0</value>
-      <webElementGuid>1e462e95-4adc-42cc-9f31-ae8c3b3dc664</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -61,7 +57,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;billing_type&quot;)/label[@class=&quot;ant-radio-wrapper&quot;]/span[@class=&quot;ant-radio&quot;]/input[@class=&quot;ant-radio-input&quot;]</value>
-      <webElementGuid>a32f9540-6bd7-4337-88ae-abe647f37f45</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -69,7 +64,6 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>//input[@value='0']</value>
-      <webElementGuid>cec78e35-12f6-4617-82c3-711c4dfa16ed</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -77,7 +71,6 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='billing_type']/label/span/input</value>
-      <webElementGuid>7a496753-fb1d-446e-8372-1a78c96fb42a</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,6 +78,5 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//label/span/input</value>
-      <webElementGuid>cea6a48e-7598-426a-a518-a6a878b569c5</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

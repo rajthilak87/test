@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;billing_type&quot; ] //input[@value='2']</value>
+         <value>//span[normalize-space()='Monthly']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
