@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//body//div[@id='root']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//button[1]//span[1]//*[name()='svg']</value>
+         <value>//div[@class='col-10 col-md-3 col-lg-3 col-xl-3']//button[@class='btn-add-to-cart'][normalize-space()='Add to cart']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

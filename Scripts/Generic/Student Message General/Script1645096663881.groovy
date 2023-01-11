@@ -25,7 +25,7 @@ import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 try {
-	WebUI.click(findTestObject('Object Repository/tutor-add-class/add_class_link'))
+	WebUI.click(findTestObject('Object Repository/Reorder/My_Classes'))
 	WebUI.delay(3)	
 	if(testCaseData.which_user == 'Dependent')
 	{
@@ -40,7 +40,7 @@ try {
 		def temp=0
 		//page: for (int z=0; z<6; z++)
 		//{
-		WebElement Table = driver.findElement(By.xpath('(//table/tbody)[1]'))
+		WebElement Table = driver.findElement(By.xpath("//div[@class='nurtem-card-design nurtem-table py-4 mt-2 mb-3']"))
 		List<WebElement> Rows = Table.findElements(By.tagName('tr'))
 		println('No. of rows: ' + Rows.size())
 		table: for (int i = 0; i < Rows.size(); i++)
@@ -52,13 +52,15 @@ try {
 							print("j value is :"+j)
 							if (Cols.get(j).getText().equalsIgnoreCase(ExpectedValue))
 								{
-									if (Cols.get(1).getText().equalsIgnoreCase(depnvalue))
-										{
+									print("Expected value is :"+ExpectedValue)
+									print("cols value is :"+ Cols.get(j).getText())
+//									if (Cols.get(1).getText().equalsIgnoreCase(depnvalue))
+//										{
 										
 											Cols.get(6).findElement(By.tagName('button')).click()										
 											temp = 1
 											table: break
-										}
+//										}
 								}
 						}
 						if (temp==1)

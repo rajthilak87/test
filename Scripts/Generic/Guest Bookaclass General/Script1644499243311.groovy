@@ -62,7 +62,10 @@ WebUI.delay(10)
 		WebUI.delay(3)	
 		WebUtil.clickElement('Object Repository/bookaclass/findbook button')
 		WebUI.delay(1)
-		def whichday = testCaseData.which_day
+		
+		// which day or slots
+		
+/*		def whichday = testCaseData.which_day
 		print ('data in which day is :'+whichday)
 		//String panel = testCaseData.panel
 		//driver.findElement(By.xpath('//*[contains(@class,"time-book-set time-available")]')).click()
@@ -70,8 +73,9 @@ WebUI.delay(10)
 		String xpath1 = "//span[normalize-space()='$whichday']"
 		print("the xpath is -"+xpath1)
 		WebElement element1 = driver.findElement(By.xpath(xpath1))
-		element1.click()
-		WebUI.delay(3)	
+		element1.click()  */
+		
+		
 		
 		/*String Xpath3 = "//div[@id='rc-tabs-1-panel-$panel']//div[@class='time-book-set-card-header'][normalize-space()='Available']"
 		if(driver.findElements(By.xpath(Xpath3)).size() != 0)
@@ -93,7 +97,7 @@ WebUI.delay(10)
 		WebElement element3 = driver.findElement(By.xpath(Xpath4))
 		element3.click()*/
 		
-	driver.findElement(By.xpath("//span[normalize-space()='Guest checkout']")).click()	
+	driver.findElement(By.xpath("//span[normalize-space()='Guest checkout']")).click()
 	WebUI.delay(3)	
 	WebUI.setText(findTestObject('Object Repository/guest_ckt/firstname'), testCaseData.firstname)	
 	WebUI.setText(findTestObject('Object Repository/guest_ckt/mobile_number'), testCaseData.mobile_number)	

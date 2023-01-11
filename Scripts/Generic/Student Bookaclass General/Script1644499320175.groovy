@@ -80,15 +80,21 @@ String currentScreenUrl = WebUI.getUrl()
 		
 		//book a sloat
 		
-//		def whichday = testCaseData.which_day
-//		print ('data in which day is :'+ whichday)
-//
-//		String xpath1 = "//span[normalize-space()='$whichday']"
-//		print("the xpath is -"+xpath1)
-//		WebElement element1 = driver.findElement(By.xpath(xpath1))
-//		element1.click()
-//		WebUI.delay(1) 
+	/*	int ind = testCaseData.individual.toInteger()
+		print("individual" + [ind])
+		if (ind == 0)
+		{
+			
+		def whichday = testCaseData.which_day
+		print ('data in which day is :'+ whichday)
+
+		String xpath1 = "//span[normalize-space()='$whichday']"
+		print("the xpath is -"+xpath1)
+		WebElement element1 = driver.findElement(By.xpath(xpath1))
+		element1.click()
+		WebUI.delay(1) 
 		
+		} */
 		
 	/*	def flip = WebUI.getText(findTestObject('Object Repository/bookaclass/flip-card'))
 		print("the flip is -"+xpath1)
@@ -105,9 +111,9 @@ String currentScreenUrl = WebUI.getUrl()
 						
 	// To Whom click first parent and dept
 				
-		def depfirst = testCaseData.deptfirst
+		int depfirst = testCaseData.deptfirst.toInteger()
 		println("the depfirst count-"+ depfirst)
-		if( depfirst == "0" ) {
+		if( depfirst == 0 ) {
 			
 			String count = testCaseData.dept_count
 			String kk = testCaseData.to_whom
@@ -124,7 +130,7 @@ String currentScreenUrl = WebUI.getUrl()
 		}	
 		}
 		
-		String count = testCaseData.dept_count
+/*		String count = testCaseData.dept_count
 		String kk = testCaseData.to_whom
 		int val =  kk.toInteger()
 		if(val!=0) {
@@ -140,7 +146,19 @@ String currentScreenUrl = WebUI.getUrl()
 			WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
 			WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 		}
-	}
+	}  */
+		
+		
+		WebUtil.clickElement('Object Repository/bookaclass/to_whom')
+		WebUI.delay(1)
+		String count = testCaseData.dept_count
+			String val = testCaseData.to_whom
+		for (int i=0;i<val;i++)
+			{
+				WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+				WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+			}
+		
 		
 		
 				if (testCaseData.teaching_type == '0')

@@ -26,9 +26,11 @@ import java.awt.Toolkit as Toolkit
 import java.awt.datatransfer.StringSelection as StringSelection
 
 try {
+	print("value of excel" + testCaseData.type)
     if (testCaseData.type == 'individual') {
         WebUI.click(findTestObject('Object Repository/tutor-profile/Individual'))
-    } else {
+    }
+	 else {
         WebUI.click(findTestObject('Object Repository/tutor-profile/business'))
     }
     
@@ -58,7 +60,12 @@ try {
 	if (testCaseData.type != 'individual') {
 		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/business_name'), testCaseData.business_name)
 	}
-	
+	else {
+		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/first-name'), testCaseData.firstname)
+		print("last name" + testCaseData.lastname)
+		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/last-name'), testCaseData.lastname)
+		WebUI.delay(3)
+	}
 	WebUI.scrollToElement(findTestObject('Object Repository/tutor-profile/country'), 3)
 	WebUtil.setVal(findTestObject('Object Repository/tutor-profile/country'), testCaseData.country)
 	
@@ -84,16 +91,12 @@ try {
 	
 		WebUI.delay(2)
 	
-		WebUtil.setVal(testCaseData.address)
-	
-		WebUI.delay(2)
-	
-		WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
-	
+//		WebUtil.setVal(testCaseData.address)
+		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/address'), testCaseData.address)
+		WebUI.delay(3)
+		WebUtil.robot.keyPress(KeyEvent.VK_DOWN)	
 		WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
-	
 		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
-	
 		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 	
 		WebUI.delay(2)
@@ -103,16 +106,25 @@ try {
 
     WebUtil.robot.keyPress(KeyEvent.VK_TAB)
 
-    WebUtil.setVal(testCaseData.classes)
-
-    WebUI.delay(2)
-
-    WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
-
-    WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+	if (testCaseData.type == 'individual')
+		{
+		if (testCaseData.gender == 'male') {
+			WebUI.click(findTestObject('Object Repository/tutor-profile/gender-male'))
+		} else if (testCaseData.gender == 'female') {
+			WebUI.click(findTestObject('Object Repository/tutor-profile/gender-female'))
+		} else {
+		WebUI.click(findTestObject('Object Repository/tutor-profile/gender-notspecify'))
+		}
+		}
+	
+	WebUI.delay(2)
+	
+    
+	WebUI.click(findTestObject('Object Repository/add_tutor_profile/classes-taught'))
+	WebUtil.setVal(testCaseData.classes)
+    WebUI.delay(5)
 
     WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
-
     WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 
     WebUtil.robot.keyPress(KeyEvent.VK_TAB)
@@ -133,13 +145,7 @@ try {
         WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
     }
     
-	WebUtil.setVal(findTestObject('Object Repository/tutor-profile/business_hrs'), testCaseData.business_time)
-	
-    if (testCaseData.type == 'individual') {
-        WebUtil.setVal(findTestObject('Object Repository/tutor-profile/first-name'), testCaseData.firstname)
-
-        WebUtil.setVal(findTestObject('Object Repository/tutor-profile/last-name'), testCaseData.lastname)
-    } 
+	WebUtil.setVal(findTestObject('Object Repository/tutor-profile/business_hrs'), testCaseData.business_time) 
     
     
     WebUI.delay(2)
@@ -151,20 +157,8 @@ try {
 	WebUI.delay(1)
     WebUtil.setVal(findTestObject('Object Repository/tutor-profile/profile-link'), testCaseData.profile_link)
 
-    WebUI.delay(2)
+    WebUI.delay(4)
 
-    if (testCaseData.type == 'individual') 
-		{
-        if (testCaseData.gender == 'male') {
-            WebUI.click(findTestObject('Object Repository/tutor-profile/gender-male'))
-        } else if (testCaseData.gender == 'female') {
-            WebUI.click(findTestObject('Object Repository/tutor-profile/gender-female'))
-        } else {
-        WebUI.click(findTestObject('Object Repository/tutor-profile/gender-notspecify'))
-		}
-		}
-    
-    WebUI.delay(2)
 
     WebUtil.fileUploadHandler(findTestObject('Object Repository/tutor-profile/upload'), testCaseData.photo)
 

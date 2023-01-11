@@ -50,7 +50,7 @@ String depnvalue = testCaseData.depn_name.trim()
 table_loc = "//div[@class='nurtem-card-design nurtem-table py-4 mt-2 mb-3']"
 WebUI.delay(2)
 WebElement Table = driver.findElement(By.xpath(table_loc))
-
+println(Table)
 WebUI.delay(2)
 List<WebElement> Rows = Table.findElements(By.tagName('tr'))	
 println('No. of rows: ' + Rows.size())
@@ -67,6 +67,7 @@ table: for (int i = 1; i < Rows.size(); i++)
 				if(j==0)
 					{
 						if (Cols.get(j).getText().equalsIgnoreCase(ExpectedValue))
+							
 							{
 								if(e!=1)
 									{
@@ -75,11 +76,15 @@ table: for (int i = 1; i < Rows.size(); i++)
 									else
 										{
 											WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Correct Class - '+Cols.get(j).getText())
+																					
 											e=2
-											Cols.get(6).findElement(By.xpath('//tbody//button[2]//span[1]')).click()
+											print("The value of I is " + i + " ")
+											but = '(//span[contains(text(),"Pay Tution")])['
+											ton =  ']'
+											button = but + i + ton
+											Cols.get(6).findElement(By.xpath(button)).click()
 											WebUI.delay(2)
 											WebUtil.robot.keyPress(KeyEvent.VK_TAB)
-											WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
 											WebUI.delay(2)
 											WebUtil.robot.keyPress(KeyEvent.VK_TAB)
 											WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
@@ -105,7 +110,25 @@ table: for (int i = 1; i < Rows.size(); i++)
 					break
 				}
 		}
-		String count = testCaseData.dept_count
+		
+		
+	WebUtil.clickElement('Object Repository/bookaclass/to_whom')
+		WebUI.delay(1)
+		String kk = testCaseData.to_whom
+		int val =  kk.toInteger()
+		println(val)
+		for (int i=0;i<val;i++)
+			{
+				WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+				WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+				WebUI.delay(1)
+				WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+				WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+				WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+			}
+		
+		
+/*		String count = testCaseData.dept_count
 		String kk = testCaseData.to_whom
 		int val =  kk.toInteger()
 		//println('the value of who is'+val)
@@ -134,7 +157,9 @@ table: for (int i = 1; i < Rows.size(); i++)
 							WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 						}
 					}
-			}
+			}	*/
+			
+			
 			WebUI.delay(3)
 			//WebUtil.robot.keyPress(KeyEvent.VK_TAB)
 			if (testCaseData.teaching_type == '0')

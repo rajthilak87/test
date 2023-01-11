@@ -59,6 +59,7 @@ for (def row : data)
 			{
 				WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor Milestone has error : ',true)
 			}
+			
 			WebUI.closeBrowser(FailureHandling.CONTINUE_ON_FAILURE)
 	
 WebUtil.generateReport(testCaseName, filterBy)
