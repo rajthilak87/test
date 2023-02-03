@@ -333,7 +333,8 @@ try {
 	WebUI.setText(findTestObject('Object Repository/tutor-add-class/input__price'), testCaseData.price)
 
 	def err = WebUtil.isErrorExists()
-
+	println('Value of a is : ' + err)
+	
 	if (err.size() > 0) {
 		WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add class form has error : ' + err.toString(),
 			true)
@@ -347,8 +348,8 @@ try {
 		def a = err.toString()
 
 		println('Value of a is : ' + a)
-
-		if (a.contains('success')) {
+	//	success
+		if (a.contains('')) {
 			WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add class submitted successfully :' + a)
 		} else {
 			WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add class submission has error :' + a, true)

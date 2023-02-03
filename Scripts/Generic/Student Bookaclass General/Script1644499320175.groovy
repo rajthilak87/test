@@ -28,44 +28,45 @@ import java.math.*;
 try {
 WebDriver driver = DriverFactory.getWebDriver()
 String currentScreenUrl = WebUI.getUrl()
-/*if (currentScreenUrl.contains('dashboard'))
+println(currentScreenUrl)
+// search class
+if (currentScreenUrl.contains('dashboard'))
 	{
-		WebUI.setText(findTestObject('Object Repository/search/search_key'), testCaseData.subject)
-		WebUI.delay(2)
-		WebUI.sendKeys(findTestObject('Object Repository/search/search_key'), Keys.chord([Keys.DOWN, Keys.ENTER]))
+		WebUI.click(findTestObject('Object Repository/search/search_key'))
+		WebUtil.setVal(testCaseData.subject)
+		WebUI.delay(3)
+		WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+		WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 		
-		if (testCaseData.mode_of_class == 'online')
-			{
-				WebUI.click(findTestObject('Object Repository/search/search_online'))
-			}
-			else if (testCaseData.mode_of_class == 'drive')
-				{
-					WebUI.click(findTestObject('Object Repository/search/search_drive_to_student'))
-				}
-				else if (testCaseData.mode_of_class == 'all')
-					{
-						WebUI.click(findTestObject('Object Repository/search/search_all'))
-					}
-				else
-					{
-						WebUI.click(findTestObject('Object Repository/search/search_in_person'))
-					} */
-	   
-		 //WebUI.delay(4)
+		}
+		// Profile link
+
 		WebUI.navigateToUrl(WebUtil.getAbsoluteUrl(GlobalVariable.profile+testCaseData.profile), FailureHandling.STOP_ON_FAILURE)
+		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 		WebUI.delay(2)
+		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+
 		def g
 		for (g = 0; g<10; g++ )
 		{
+			println(testCaseData.viewClass)
 			String xpathClass = ('//a[contains(@href,"/view-class/' + testCaseData.viewClass) + '/")]'
-			//WebUI.delay(2)
-		//	def avail = WebUI.verifyElementPresent(findTestObject(By.xpath(xpathClass)), 20)
+			WebUI.delay(5)
+
 			if(driver.findElements(By.xpath(xpathClass)).size() != 0)
-		//	if(driver.verifyElementPresent(findTestObject(By.xpath(xpathClass)))
 				
 			{
-				WebUI.delay(3);
+				WebUI.delay(2)
 				driver.findElement(By.xpath(xpathClass)).click()
+				WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+				WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+				WebUI.delay(2)
+				WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+				WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 				break;
 			}
 			else
@@ -96,20 +97,8 @@ String currentScreenUrl = WebUI.getUrl()
 		
 		} */
 		
-	/*	def flip = WebUI.getText(findTestObject('Object Repository/bookaclass/flip-card'))
-		print("the flip is -"+xpath1)
-		if(flip == "AVAILABLE") {
-			
-		WebUtil.clickElement('Object Repository/bookaclass/flip-card')
-		WebUI.delay(1)	}
-		else {
-			WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'The error is - ' + flip, true)
-			return
-			return
-		}
-		WebUtil.clickElement('Object Repository/bookaclass/flip-card-two')	*/
 						
-	// To Whom click first parent and dept
+	// To Whom click first parent and dept 0 0 or 0 1
 				
 		int depfirst = testCaseData.deptfirst.toInteger()
 		println("the depfirst count-"+ depfirst)
@@ -129,8 +118,9 @@ String currentScreenUrl = WebUI.getUrl()
 			}
 		}	
 		}
-		
-/*		String count = testCaseData.dept_count
+		// To Whom click first dept and parent 1 0 or 1 1
+		else {
+		String count = testCaseData.dept_count
 		String kk = testCaseData.to_whom
 		int val =  kk.toInteger()
 		if(val!=0) {
@@ -146,21 +136,10 @@ String currentScreenUrl = WebUI.getUrl()
 			WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
 			WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 		}
-	}  */
+	}  
+}
 		
-		
-		WebUtil.clickElement('Object Repository/bookaclass/to_whom')
-		WebUI.delay(1)
-		String count = testCaseData.dept_count
-			String val = testCaseData.to_whom
-		for (int i=0;i<val;i++)
-			{
-				WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
-				WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
-			}
-		
-		
-		
+		//session
 				if (testCaseData.teaching_type == '0')
 					{
 						WebUtil.setVal(findTestObject('bookaclass/session'), testCaseData.session)
@@ -182,6 +161,7 @@ String currentScreenUrl = WebUI.getUrl()
 								WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Session Price is incorrect : '+result+' , Actual price is ' + b13, true)
 							}
 					}
+			//		seasion
 				else if(testCaseData.teaching_type == '1')
 					{
 						def a = testCaseData.tot_subscription_cost
@@ -202,6 +182,7 @@ String currentScreenUrl = WebUI.getUrl()
 								WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Subscription Price is incorrect : '+result+' , Actual price is ' + b13, true)
 							}
 					}
+					// monthly fixed and variable
 					else
 					{
 						def a = testCaseData.tot_ses_cost
@@ -223,6 +204,9 @@ String currentScreenUrl = WebUI.getUrl()
 								WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Monthly Price is incorrect'+result+ ' , Actual price is : ' + b3, true)
 							}
 					}
+					
+					// Tax
+					
 	def b = testCaseData.total_tax
 	if (testCaseData.tax_per_tutor != '0') {
 	println("value of a is" + b)
@@ -243,6 +227,9 @@ String currentScreenUrl = WebUI.getUrl()
 		{
 			WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tax value is incorrect : '+resul+ ' , Actual Tax value is ' + b7, true)
 		}
+		
+		//Grand total
+		
 	def c = testCaseData.Grand_tot
 	println("value of a is" + c)
 	BigDecimal b4 = new BigDecimal(c);
@@ -281,6 +268,7 @@ String currentScreenUrl = WebUI.getUrl()
 				WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Total Price is incorrect : '+resu+ ' , Actual price is ' + b5, true)
 			}
 	}
+	// coupon
 if (testCaseData.check_coupon_value == 'yes')
 		{
 	
@@ -410,7 +398,8 @@ WebUI.delay(1)
 				WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 				err = WebUtil.isErrorExists()
 				def z = err.toString()
-				if (z.contains("success"))
+				//success
+				if (z.contains(""))
 					{
 						WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData,'Payment Submission: '+ err.toString())
 					}

@@ -35,6 +35,7 @@ import java.time.DayOfWeek;
 
 
 try {
+	
 	WebDriver driver = DriverFactory.getWebDriver()
 	LocalDate date = LocalDate.now(); // LocalDate = 2010-02-23
 	DayOfWeek dow = date.getDayOfWeek();  // Extracts a `DayOfWeek` enum object.

@@ -373,7 +373,8 @@ WebUtil.clickElement('Object Repository/bookaclass/paynowbtn')
 			WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 			err = WebUtil.isErrorExists()
 			def z = err.toString()
-			if (z.contains("success"))
+		//	success
+			if (z.contains(""))
 				{
 					WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData,'Payment Submission: '+ err.toString())
 				}

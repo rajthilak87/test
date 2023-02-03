@@ -125,6 +125,7 @@ page: for (int z=0; z<6; z++)
 			WebUI.click(findTestObject('Object Repository/bookaclass/enrol/submit'))
 			WebUI.delay(2)
 			}
+			
 			if (testCaseData.teaching_type == 'session')
 				{
 					WebUtil.setVal(findTestObject('bookaclass/session'), testCaseData.session)
