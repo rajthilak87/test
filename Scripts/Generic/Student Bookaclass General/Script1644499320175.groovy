@@ -49,7 +49,8 @@ if (currentScreenUrl.contains('dashboard'))
 		WebUI.delay(2)
 		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
 		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
-
+		
+		//class link
 		def g
 		for (g = 0; g<10; g++ )
 		{

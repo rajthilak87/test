@@ -24,7 +24,7 @@ import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import java.awt.event.KeyEvent as KeyEvent
 
 try {
-		def div_addcamp	= 		"//a[@href='/tutor/update-camp']//button[@type='button']"
+		def div_addcamp	= 		"//button[@class='ant-btn ant-btn-default my-class-tab-action-btn myclass-add-btn']"
 		def addcamp   	=		"(//button[@type='submit'])[1]"
 		def addon_add	=		"//button[@type='button']//span[contains(text(),'Add Now')]"
 		def addon_cost	=		"//input[@class='ant-input-number-input' and @name='new_addon_cost']"
@@ -61,20 +61,25 @@ try {
 		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)		
 		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)	
 		driver.findElement(By.xpath(camp_name)).sendKeys(testCaseData.camp_name)		
-		def teaching_level1 = testCaseData.teaching_level 
-		String xpath1 = "//div[@id='levels'] //input[@value='$teaching_level1']"
-		driver.findElement(By.xpath(xpath1)).click()
-		WebUI.delay(1)
-		def teaching_mode1 = testCaseData.teaching_mode		
-		String xpath2 = "//div[@id='teaching_mode'] //input[@value='$teaching_mode1']"		
-		driver.findElement(By.xpath(xpath2)).click()	
-		WebUI.delay(1)
-		driver.findElement(By.xpath(max_seats)).sendKeys(testCaseData.max_seats)	
-		WebUI.delay(1)
+		
 		WebUtil.fileUploadHandler(findTestObject('Object Repository/tutor_add_camp/image'),testCaseData.picture1)	
+		WebUI.delay(1)
+		WebUtil.fileUploadHandler(findTestObject('Object Repository/tutor_add_camp/flyer'),testCaseData.picture2)
 		WebUI.delay(1)
 		driver.findElement(By.xpath(description)).sendKeys(testCaseData.description1)	
 		WebUI.delay(1)
+		
+		def teaching_level1 = testCaseData.teaching_level
+		String xpath1 = "//div[@id='levels'] //input[@value='$teaching_level1']"
+		driver.findElement(By.xpath(xpath1)).click()
+		WebUI.delay(1)
+		def teaching_mode1 = testCaseData.teaching_mode
+		String xpath2 = "//div[@id='teaching_mode'] //input[@value='$teaching_mode1']"
+		driver.findElement(By.xpath(xpath2)).click()
+		WebUI.delay(1)
+		driver.findElement(By.xpath(max_seats)).sendKeys(testCaseData.max_seats)
+		WebUI.delay(1)
+		
 		def age_group = testCaseData.age_groups //'0,1' //1,2 //2,5//1,5//6,8//9,12//18,100		
 		xpath = "//div[@id='age_group_label'] //input[@value='$age_group']"		
 		WebElement element1 = driver.findElement(By.xpath(xpath))	
