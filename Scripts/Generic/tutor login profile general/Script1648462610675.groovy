@@ -45,8 +45,6 @@ try {
         WebUI.click(findTestObject('Object Repository/tutor-profile/online'))
 		WebUI.delay(1)
     }
-    
-	print("Value is : " + testCaseData.mode_of_teaching)
 	
     if (testCaseData.mode_of_teaching == "c") {
 		WebUI.click(findTestObject('Object Repository/tutor-profile/studio'))
@@ -62,12 +60,18 @@ try {
 	}
 	else {
 		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/first-name'), testCaseData.firstname)
-		print("last name" + testCaseData.lastname)
+
 		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/last-name'), testCaseData.lastname)
-		WebUI.delay(3)
+
 	}
-	WebUI.scrollToElement(findTestObject('Object Repository/tutor-profile/country'), 3)
-	WebUtil.setVal(findTestObject('Object Repository/tutor-profile/country'), testCaseData.country)
+//	WebUI.scrollToElement(findTestObject('Object Repository/tutor-profile/country'), 3)
+	
+
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	
+	WebUtil.setVal(testCaseData.country)
+//	WebUtil.setVal(findTestObject('Object Repository/tutor-profile/country'), testCaseData.country)
 	
 		WebUI.delay(2)
 	
@@ -79,29 +83,40 @@ try {
 	
 		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 	
-		WebUI.delay(1)
+
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
 	
-		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/zipcode'), testCaseData.zipcode)
+
+		WebUtil.setVal(testCaseData.zipcode)
+//		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/zipcode'), testCaseData.zipcode)
 	
-		WebUI.delay(2)
+//		WebUI.delay(1)
 	
 		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
 	
 		WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
 	
-		WebUI.delay(2)
+
 	
-//		WebUtil.setVal(testCaseData.address)
-		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/address'), testCaseData.address)
+		WebUtil.setVal(testCaseData.address)
+//		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/address'), testCaseData.address)
 		WebUI.delay(3)
 		WebUtil.robot.keyPress(KeyEvent.VK_DOWN)	
 		WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
 		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
 		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
-	
-		WebUI.delay(2)
-	
-		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/mobile with id'), testCaseData.mobile)
+
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+		
+
+
+		WebUtil.setVal(testCaseData.mobile)
+		
+//		WebUtil.setVal(findTestObject('Object Repository/tutor-profile/mobile with id'), testCaseData.mobile)
 
 
     WebUtil.robot.keyPress(KeyEvent.VK_TAB)
@@ -117,20 +132,17 @@ try {
 		}
 		}
 	
-	WebUI.delay(2)
-	
     
-	WebUI.click(findTestObject('Object Repository/add_tutor_profile/classes-taught'))
+//	WebUI.click(findTestObject('Object Repository/tutor-profile/class'))
 	WebUtil.setVal(testCaseData.classes)
-    WebUI.delay(5)
+    WebUI.delay(3)
 
     WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
     WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 
     WebUtil.robot.keyPress(KeyEvent.VK_TAB)
 
-    WebUI.delay(1)
-
+ 
     if (testCaseData.mode_of_teaching != 0) {
         WebUtil.setVal(testCaseData.cities)
 
@@ -145,26 +157,82 @@ try {
         WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
     }
     
-	WebUtil.setVal(findTestObject('Object Repository/tutor-profile/business_hrs'), testCaseData.business_time) 
+	WebUI.delay(2)
+	
+//	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+
+	
+	for (int i = 0; i<6; i++) {
+		
+			println('Value of i is : ' + i)
+			WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+			WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+			WebUI.click(findTestObject('Object Repository/tutor-profile/Business_hrs/select_day'))
+			println('Select Day ')
+			for (int j = 1; j<=i; j++) {
+			WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+			WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+			WebUI.delay(1)
+			println('move_down ')
+			}
+			WebUI.delay(1)
+			WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+			WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+			println('choose_day ')
+		WebUI.delay(1)
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+		WebUI.sendKeys(findTestObject('Object Repository/tutor-profile/Business_hrs/start_time'),'9:00 AM')
+		WebUI.delay(1)
+		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+		WebUI.delay(1)
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUI.sendKeys(findTestObject('Object Repository/tutor-profile/Business_hrs/end_time'),'9:00 PM')
+		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+		WebUI.delay(1)
+		WebUI.click(findTestObject('Object Repository/tutor-profile/Business_hrs/add_hours'))
+		WebUI.delay(1)
+		}
     
-    
-    WebUI.delay(2)
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
 
-    WebUtil.setVal(findTestObject('Object Repository/tutor-profile/number of students'), testCaseData.num_of_students)
+	WebUtil.setVal(testCaseData.num_of_students)
+	
+//    WebUtil.setVal(findTestObject('Object Repository/tutor-profile/number of students'), testCaseData.num_of_students)
 
-    WebUI.delay(1)
-	WebUtil.setVal(findTestObject('tutor-profile/year-of-experiance'), testCaseData.experience)
-	WebUI.delay(1)
-    WebUtil.setVal(findTestObject('Object Repository/tutor-profile/profile-link'), testCaseData.profile_link)
+ 
+	
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
 
-    WebUI.delay(4)
+	WebUtil.setVal(testCaseData.experience)
+//	WebUtil.setVal(findTestObject('tutor-profile/year-of-experiance'), testCaseData.experience)
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	
+
+	WebUtil.setVal(testCaseData.profile_link)
+//    WebUtil.setVal(findTestObject('Object Repository/tutor-profile/profile-link'), testCaseData.profile_link)
+
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+
 
 
     WebUtil.fileUploadHandler(findTestObject('Object Repository/tutor-profile/upload'), testCaseData.photo)
 
-    WebUI.delay(2)
+    WebUI.delay(1)
 
-    WebUtil.setVal(findTestObject('Object Repository/tutor-profile/description'), testCaseData.description)
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	
+	WebUtil.setVal(testCaseData.description)
+	
+//    WebUtil.setVal(findTestObject('Object Repository/tutor-profile/description'), testCaseData.description)
 
     def err = WebUtil.isErrorExists()
 

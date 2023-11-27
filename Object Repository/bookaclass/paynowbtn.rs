@@ -6,12 +6,11 @@
    <elementGuidId>26b2b362-079e-430b-b336-945b6c9333e0</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//span[normalize-space()='Pay Now']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//button[@class='ant-btn css-dev-only-do-not-override-1adbn6x ant-btn-primary']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

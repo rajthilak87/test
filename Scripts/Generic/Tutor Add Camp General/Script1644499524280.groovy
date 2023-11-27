@@ -22,146 +22,384 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebDriver as WebDriver
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import java.awt.event.KeyEvent as KeyEvent
+import java.lang.Integer as Integer
 
 try {
-		def div_addcamp	= 		"//button[@class='ant-btn ant-btn-default my-class-tab-action-btn myclass-add-btn']"
-		def addcamp   	=		"(//button[@type='submit'])[1]"
-		def addon_add	=		"//button[@type='button']//span[contains(text(),'Add Now')]"
-		def addon_cost	=		"//input[@class='ant-input-number-input' and @name='new_addon_cost']"
-		def addon_desc	=		"//input[@class='ant-input' and @name='new_addon_description']"
-		def addon_min	=		"//input[@id='no_of_min_addons']"
-		def addon_name	=		"//input[@class='ant-input' and @name='new_addon_name']"
-		def agegroup	=		"//div[@id='age_group_label' and @class='ant-checkbox-group']"
-		def camp_about	=		"//input[@id='camps_taught']"
-		def camp_name	=		"(//input[@id='name'])[1]"
-		def package_name =      "(//input[@id='name'])[2]"
-		def pack_cost	=		"//input[@id='price']"
-		def description =	 	"//div[@class='notranslate public-DraftEditor-content']"
-		def image1		=		"//div[@class='ant-upload-text']"
-		def input_submit =		"(//button[@type='submit'])[2]"
-		def mand		=		"//button[@name='new_addon_mandat']"
-		def max_seats	=		"//input[@id='no_of_max_students']"
-		def tax_percentage	=	"//input[@id='tax_percentage']"
-		def pack_desc	=		"//textarea[@id='description']"
-		def teaching_level_beginner	 = "//span[normalize-space()='Beginner']"
-		def teaching_level_expert	=  "//span[normalize-space()='Expert']"
-		def teaching_level_intermediate	= "//span[normalize-space()='Intermediate']"
-		def teaching_mode_inperson	=	"//span[normalize-space()='In-Person']"
-		def teaching_mode_online	=	"//span[normalize-space()='Online']" 
-		def addcamp_link	= 		"//span[contains(text(),'My Camps')]"			
-		WebDriver driver = DriverFactory.getWebDriver()		
-		driver.findElement(By.xpath(addcamp_link)).click()
-		WebUI.delay(3)		
-		driver.findElement(By.xpath(div_addcamp)).click()
-		WebUI.delay(3)		
-		driver.findElement(By.xpath(camp_about)).sendKeys(testCaseData.camp_about)		
-		WebUI.delay(3)		
-		//WebUtil.robot.keyPress(KeyEvent.VK_DOWN)		
-		//WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)	
-		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)		
-		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)	
-		driver.findElement(By.xpath(camp_name)).sendKeys(testCaseData.camp_name)		
+	
+	// My camp link
+	WebUI.click(findTestObject('Object Repository/Camp Record/Page_Nurtem/span_My Camps'))
+	
+	// Add Camp
+	WebUI.click(findTestObject('Object Repository/Camp Record/Page_Nurtem/span_Add a Camp'))
+	WebUI.delay(02)
 		
-		WebUtil.fileUploadHandler(findTestObject('Object Repository/tutor_add_camp/image'),testCaseData.picture1)	
-		WebUI.delay(1)
-		WebUtil.fileUploadHandler(findTestObject('Object Repository/tutor_add_camp/flyer'),testCaseData.picture2)
-		WebUI.delay(1)
-		driver.findElement(By.xpath(description)).sendKeys(testCaseData.description1)	
-		WebUI.delay(1)
-		
-		def teaching_level1 = testCaseData.teaching_level
-		String xpath1 = "//div[@id='levels'] //input[@value='$teaching_level1']"
-		driver.findElement(By.xpath(xpath1)).click()
-		WebUI.delay(1)
-		def teaching_mode1 = testCaseData.teaching_mode
-		String xpath2 = "//div[@id='teaching_mode'] //input[@value='$teaching_mode1']"
-		driver.findElement(By.xpath(xpath2)).click()
-		WebUI.delay(1)
-		driver.findElement(By.xpath(max_seats)).sendKeys(testCaseData.max_seats)
-		WebUI.delay(1)
-		
-		def age_group = testCaseData.age_groups //'0,1' //1,2 //2,5//1,5//6,8//9,12//18,100		
-		xpath = "//div[@id='age_group_label'] //input[@value='$age_group']"		
-		WebElement element1 = driver.findElement(By.xpath(xpath))	
-		element1.click()	
-		WebUI.delay(1)
-		driver.findElement(By.xpath(tax_percentage)).sendKeys(testCaseData.tax_per)		
-		WebUI.delay(1)
-		driver.findElement(By.xpath(package_name)).sendKeys(testCaseData.pack_name)		
-		WebUI.delay(1)
-		WebElement start_date3 = driver.findElement(By.xpath('//input[@id="start_date"]'))
-		WebUI.delay(1)
-		start_date3.sendKeys(testCaseData.start_date1)
-		WebUI.delay(1)
-		start_date3.sendKeys(Keys.TAB)
-		start_date3.sendKeys(Keys.TAB)
-		WebUI.delay(1)		
-		WebElement end_date2 = driver.findElement(By.xpath('//input[@id="end_date"]'))
-		WebUI.delay(1)
-		end_date2.sendKeys(testCaseData.end_date1)
-		WebUI.delay(1)
-		end_date2.sendKeys(Keys.TAB)
-		end_date2.sendKeys(Keys.TAB)
-		WebUI.delay(1)				
-		WebElement start_time3 = driver.findElement(By.xpath('//input[@id="start_time"]'))
-		WebUI.delay(1)
-		start_time3.sendKeys(testCaseData.start_time1)
-		WebUI.delay(1)
-		start_time3.sendKeys(Keys.ENTER)			
-		WebElement end_time2 = driver.findElement(By.xpath('//input[@id="end_time"]'))
-		WebUI.delay(1)
-		end_time2.sendKeys(testCaseData.close_time1)
-		WebUI.delay(1)
-		end_time2.sendKeys(Keys.ENTER)
-		//end_time2.sendKeys(Keys.TAB)
-		WebUI.delay(1)		
-		driver.findElement(By.xpath(pack_cost)).sendKeys(testCaseData.pack_cost1)
-		WebUI.delay(1)
-		driver.findElement(By.xpath(pack_desc)).sendKeys(testCaseData.pack_desc1)		
-		WebUI.delay(1)
-		driver.findElement(By.xpath(addcamp)).submit();		
-		def err = WebUtil.isErrorExists()		
-		if (err.size() > 0)
-			{
-				WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add camp has error : ' + err.toString(),true)
-				return
+	// camp service
+	WebUI.click(findTestObject('Object Repository/Camp Record/Page_Nurtem/div_Clarinet'))
+	//WebUtil.setVal(testCaseData.camp_about)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	
+	// camp name
+	WebUI.click(findTestObject('Object Repository/Camp Record/Page_Nurtem/input__name'))
+	WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input__name'), testCaseData.camp_name)
+	
+	// camp image
+	WebUtil.fileUploadHandler(findTestObject('Object Repository/Camp Record/Page_Nurtem/span_Upload'), testCaseData.picture1)
+	
+	// camp flyer
+	WebUtil.fileUploadHandler(findTestObject('Object Repository/Camp Record/Page_Nurtem/div_Upload'), testCaseData.picture2)
+	
+	// camp description
+	WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/div_Java is a high-level, class-based, obje_0290d3'),testCaseData.description1)
+	
+	//String a = testCaseData.Addon_value.toString()
+	
+	//println (a)
+	
+	// session name
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUI.delay(3)
+	WebUtil.setVal(testCaseData.pack_name)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input_Session Name_session_name'), testCaseData.pack_name)
+	
+	// session type
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.Session_Type)
+	WebUI.delay(3)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/div_Weekdays'), testCaseData.Session_Type)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	
+	
+	if ( testCaseData.Session_Type == 'Other')
+		{
+			WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+			WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+			WebUI.delay(3)
+			WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+			WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+			if ( testCaseData.Day == 'Monday')
+				 {
+					 WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+					 WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 			}
-			driver.findElement(By.xpath(addon_min)).sendKeys(testCaseData.min_addons)
-			WebUI.delay(1)
-			driver.findElement(By.xpath(addon_name)).sendKeys(testCaseData.addon_name1)
-			WebUI.delay(1)
-			driver.findElement(By.xpath(addon_desc)).sendKeys(testCaseData.addon_desc1)
-			WebUI.delay(1)
-			driver.findElement(By.xpath(addon_cost)).sendKeys(testCaseData.addon_cost1)  	
-			WebUI.delay(1)
-			if (testCaseData.mandatory == '1')
-				{
-					driver.findElement(By.xpath(mand)).click()
-				} 					
-				WebUI.delay(2)
-				driver.findElement(By.xpath(addon_add)).click();			
-				err = WebUtil.isErrorExists()		
-				if (err.size() > 0)
+				else if ( testCaseData.Day == 'Tuesday')
 					{
-						WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add camp with addon has error : ' + err.toString(),true)
+						WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+						WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+						WebUI.delay(3)
+						WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+						WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 					}
-					else
-						{  
-							driver.findElement(By.xpath(input_submit)).submit();
-							err = WebUtil.isErrorExists()						
-							def a = err.toString()
-							println ("Value of a is : " + a)
-							if (a.contains("successfully"))
-								{								
-									WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add camp submitted sucesfully : ' + a)
-								}
-							else
-								{
-								WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add camp has submission error'+a,true)
-								}													
+					else if ( testCaseData.Day == 'Wednesday')
+						{
+							WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+							WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+							WebUI.delay(3)
+							WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+							WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+							WebUI.delay(3)
+							WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+							WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
 						}
+						else if ( testCaseData.Day == 'Thursday')
+							{
+								WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+								WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+								WebUI.delay(3)
+								WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+								WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+								WebUI.delay(3)
+								WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+								WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+								WebUI.delay(3)
+								WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+								WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+							}
+							else if ( testCaseData.Day == 'Friday')
+								{
+									WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+									WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+									WebUI.delay(3)
+									WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+									WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+									WebUI.delay(3)
+									WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+									WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+									WebUI.delay(3)
+									WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+									WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+									WebUI.delay(3)
+									WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+									WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+								}
+								else if ( testCaseData.Day == 'Saturday')
+									{
+										WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+										WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+										WebUI.delay(3)
+										WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+										WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+										WebUI.delay(3)
+										WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+										WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+										WebUI.delay(3)
+										WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+										WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+										WebUI.delay(3)
+										WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+										WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+										WebUI.delay(3)
+										WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+										WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+									}
+									else
+										{
+											WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+											WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+											WebUI.delay(3)
+											WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+											WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+											WebUI.delay(3)
+											WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+											WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+											WebUI.delay(3)
+											WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+											WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+											WebUI.delay(3)
+											WebUtil.robot.keyPress(KeyEvent.VK_DOWN)
+											WebUtil.robot.keyRelease(KeyEvent.VK_DOWN)
+											WebUI.delay(3)
+											WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+											WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+										}
+		}
+	
+	
+	// Mode
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.teaching_mode)
+	WebUI.delay(3)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/div_online'), testCaseData.teaching_mode)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	
+	// Learning level
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.teaching_level)
+	WebUI.delay(3)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/div_Beginner'), testCaseData.teaching_level)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	
+	// Age Group
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.age_groups)
+	WebUI.delay(3)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/div_Select Age Group'), testCaseData.age_groups)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	
+	// start date
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.start_date1)
+	WebUI.delay(3)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input_Start Date_start_date'), testCaseData.start_date1)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	
+	// end date
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	//WebUI.click(findTestObject('Object Repository/Camp Record/Page_Nurtem/input_End Date_end_date'))
+	WebUtil.setVal(testCaseData.end_date1)
+	WebUI.delay(3)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input_End Date_end_date'), testCaseData.end_date1)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	
+	// start time
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.start_time1)
+	WebUI.delay(3)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input_Start time_start_time'), testCaseData.start_time1)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	WebUI.delay(5)
+	
+	// end time
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.close_time1)
+	WebUI.delay(3)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input_End time_end_time'), testCaseData.close_time1)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	WebUI.delay(5)
+	
+	// price
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.pack_cost1)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input_Price_price'), testCaseData.pack_cost1)
+	WebUI.delay(5)
+	
+	// Tax percentage
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.tax_per)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input_Tax Percentage_tax_percentage'), testCaseData.tax_per)
+	WebUI.delay(5)
+	
+	// Max no of seats
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.max_seats)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input_Max no.of seats_no_of_max_students'), testCaseData.max_seats)
+	WebUI.delay(5)
+	
+	// Location Taught
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	WebUI.delay(5)
+	
+	if ( testCaseData.teaching_mode == 'o') {
+		
+	// Meeting link
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.Meeting_link)
+	WebUI.delay(5)
+	
+	// Meeting code
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.Meeting_Code)
+	WebUI.delay(5)
+	
 	}
-	catch (org.openqa.selenium.NoSuchElementException | Exception e)
-	{
-		WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add camp has error : ' + e.getMessage(),true)
-	} 
+		
+	// session description
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUtil.setVal(testCaseData.description2)
+	//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/textarea__description'), testCaseData.description2)
+	WebUI.delay(5)
+	
+	
+	if ( testCaseData.Addon_value =='yes')
+		{
+			
+		// Addon name
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+		//WebUI.click(findTestObject('Object Repository/Camp Record/Page_Nurtem/input__new_addon_name'))
+		WebUtil.setVal(testCaseData.addon_name1)
+		
+		// Addon description
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+		WebUtil.setVal(testCaseData.addon_desc1)
+		//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input__new_addon_description'), testCaseData.addon_desc1)
+		
+		// Addon Cost
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+		WebUtil.setVal(testCaseData.addon_cost1)
+		//WebUI.setText(findTestObject('Object Repository/Camp Record/Page_Nurtem/input__new_addon_cost'), testCaseData.addon_cost1)
+		
+		// Addon add now
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+		WebUI.delay(3)
+		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+		//WebUI.click(findTestObject('Object Repository/Camp Record/Page_Nurtem/span_Add Now'))
+		
+		}
+		else {
+			WebUI.delay(3)
+			WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+			WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+			WebUI.delay(3)
+			WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+			WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+			WebUI.delay(3)
+			WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+			WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+			WebUI.delay(3)
+			WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+			WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+			WebUI.delay(3)
+		}
+	
+	/*	// session addon
+		WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+		WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+		WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+		WebUI.delay(5)  */
+		
+	// add now session
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	//WebUI.click(findTestObject('Object Repository/Camp Record/Page_Nurtem/span_Update Now'))
+	WebUI.delay(5)
+	
+	// Submit
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_TAB)
+	WebUtil.robot.keyRelease(KeyEvent.VK_TAB)
+	WebUI.delay(3)
+	WebUtil.robot.keyPress(KeyEvent.VK_ENTER)
+	WebUtil.robot.keyRelease(KeyEvent.VK_ENTER)
+	//WebUI.click(findTestObject('Object Repository/Camp Record/Page_Nurtem/span_Submit'))
+	WebUI.delay(20) 
+	
+	err = WebUtil.isErrorExists()
+	
+	def a = err.toString()
+	if (a.contains('')) {
+		WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Add Camp submitted successfully :' + a)
+	} else {
+		WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Add Camp submission has error :' + a, true)
+	}
+	
+}
+
+catch (Exception e) {
+	WebUtil.reportAndtakeScreenshot(testCaseName, testCaseData, 'Tutor add class has error : ' + e.getMessage(), true)
+}

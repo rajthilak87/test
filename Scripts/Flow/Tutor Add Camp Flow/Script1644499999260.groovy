@@ -24,7 +24,7 @@ import java.awt.event.KeyEvent as KeyEvent
 
 String testCaseName = 'Tutor Addcamp Report'
 def filterBy = ['add_camp', 'tutor']
-def data = WebUtil.getData(GlobalVariable.projectRootPath + '\\TestDataXls\\Tutor Add Camp.xlsx', 'add_camp', filterBy)
+def data = WebUtil.getData(GlobalVariable.projectRootPath + '\\TestDataXls\\Tutor Add Camp re.xlsx', 'add_camp', filterBy)
 WebUtil.stopOnEmptyData(data)
 for (def row : data)
 	{

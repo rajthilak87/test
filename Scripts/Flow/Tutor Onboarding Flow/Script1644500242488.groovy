@@ -27,7 +27,7 @@ for (def row : data)
 		WebUI.openBrowser('')
 		WebUI.deleteAllCookies()
 		def message = WebUI.callTestCase(findTestCase('Test Cases/Generic/Tutor Signup General'), [('testCaseName') : testCaseName, ('testCaseData') : row], FailureHandling.STOP_ON_FAILURE)
-	/*	WebUI.comment(message)			
+		WebUI.comment(message)			
 		WebUI.delay(5)		
 		def signupSuccess = WebUtil.verifyPresent('Object Repository/generic/signup_success', testCaseName, row)		
 		if (signupSuccess)
@@ -56,7 +56,7 @@ for (def row : data)
 				else
 					{
 						WebUtil.reportAndtakeScreenshot(testCaseName, row, 'Tutor Signup Failed', true)
-					}  */
+					}  
 			}		
    
 	WebUI.closeBrowser(FailureHandling.CONTINUE_ON_FAILURE)

@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='ant-select global-search ant-select-multiple ant-select-show-search']//div[@class='ant-select-selection-overflow']</value>
+         <value>//div[@class='ant-select ant-select-in-form-item global-search css-dev-only-do-not-override-pr0fja ant-select-multiple ant-select-show-search']//div[@class='ant-select-selection-overflow']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -38,7 +38,8 @@ for (def row : data)
 		String currentUrl = WebUI.getUrl(FailureHandling.CONTINUE_ON_FAILURE).toString()
 		if (currentUrl.contains('dashboard'))
 			{
-				WebUI.callTestCase(findTestCase('Generic/Tutor Add Class General'), [('testCaseName') : testCaseName, ('testCaseData') : row], 
+						
+				WebUI.callTestCase(findTestCase('Generic/Tutor Add Class1 General'), [('testCaseName') : testCaseName, ('testCaseData') : row], 
 					FailureHandling.CONTINUE_ON_FAILURE)
 			}
 			else

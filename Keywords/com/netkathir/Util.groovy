@@ -712,6 +712,262 @@ public class Util {
 
 	}
 
+	def static void generateData(String tcName='', Map data = [:], String msg='', String msg1='', String msg2='', String msg3='', String msg4='',String msg5='',String msg6='',String msg7='',boolean reportErr=false) {
+
+		Util.logger.logInfo(tcName)
+		Util.logger.logInfo(data.toString())
+
+		//get element and show to the user for debugging
+		def timestamp = new Date().format("YYYY-MM-dd-HH-mm-ss")
+		String url = WebUI.getUrl()
+
+		String pathToScreenshots = GlobalVariable.projectRootPath + "\\Screenshots\\" + timestamp + '.png';
+		//com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
+		WebUI.takeScreenshot(pathToScreenshots, ["text" : msg, "x" : 10, "y" : 5], FailureHandling.CONTINUE_ON_FAILURE)
+
+		WebUI.delay(1)
+
+		try {
+
+
+			String fileName = GlobalVariable.projectRootPath + "\\Screenshots\\" + tcName + ".xlsx";
+			def file = new File(fileName);
+			if(file.exists()) {
+
+
+
+				def excelData = ExcelFactory.getExcelDataWithDefaultSheet(fileName,"Error_report", true);
+
+				def existingRows = excelData.getAllData()
+
+				FileInputStream fisxls = new FileInputStream(fileName)
+				XSSFWorkbook workbook = new XSSFWorkbook(fisxls)
+				CreationHelper createHelper = workbook.getCreationHelper();
+				XSSFSheet sheet = workbook.getSheet("Error_report")
+
+
+				Row row = sheet.createRow(existingRows.size() + 1)
+
+
+				data.eachWithIndex { entry, i ->
+					Cell cell = row.createCell(i)
+					cell.setCellValue(entry.value)
+					sheet.autoSizeColumn(i)
+				}
+
+
+				CellStyle bgStyle = workbook.createCellStyle();
+
+				if(reportErr)
+				{
+					bgStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
+					bgStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+
+					Cell cell = row.createCell(data.size() + 10)
+					cell.setCellValue('Failed')
+					cell.setCellStyle(bgStyle);
+
+					sheet.autoSizeColumn(data.size() + 10)
+				}else {
+					bgStyle.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
+					bgStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+
+					Cell cell = row.createCell(data.size() + 10)
+					cell.setCellValue('Passed')
+					cell.setCellStyle(bgStyle);
+
+					sheet.autoSizeColumn(data.size() + 10)
+				}
+
+
+				Font linkFont = workbook.createFont();
+				linkFont.setItalic(true);
+				linkFont.setFontHeightInPoints((short) 12);
+				linkFont.setColor(IndexedColors.BLUE.getIndex());
+
+				CellStyle linkFontStyle = workbook.createCellStyle();
+				linkFontStyle.setFont(linkFont);
+
+				String path = './Screenshots/' + timestamp + '.png';
+				//create next cell
+				Cell imgcell = row.createCell(data.size() + 1);
+				imgcell.setCellValue(path)
+				imgcell.setCellStyle(linkFontStyle)
+				sheet.autoSizeColumn(data.size() + 1)
+
+				Cell msgcell = row.createCell(data.size() + 2);
+				msgcell.setCellValue(msg)
+				sheet.autoSizeColumn(data.size() + 2)
+
+				Cell msgcell1 = row.createCell(data.size() + 3);
+				msgcell1.setCellValue(msg1)
+				sheet.autoSizeColumn(data.size() + 3)
+
+				Cell msgcell2 = row.createCell(data.size() + 4);
+				msgcell2.setCellValue(msg2)
+				sheet.autoSizeColumn(data.size() + 4)
+
+				Cell msgcell3 = row.createCell(data.size() + 5);
+				msgcell3.setCellValue(msg3)
+				sheet.autoSizeColumn(data.size() + 5)
+
+				Cell msgcell4 = row.createCell(data.size() + 6);
+				msgcell4.setCellValue(msg4)
+				sheet.autoSizeColumn(data.size() + 6)
+
+				Cell msgcell5 = row.createCell(data.size() + 7);
+				msgcell5.setCellValue(msg5)
+				sheet.autoSizeColumn(data.size() + 7)
+
+				Cell msgcell6 = row.createCell(data.size() + 8);
+				msgcell6.setCellValue(msg6)
+				sheet.autoSizeColumn(data.size() + 8)
+
+				Cell msgcell7 = row.createCell(data.size() + 9);
+				msgcell7.setCellValue(msg7)
+				sheet.autoSizeColumn(data.size() + 9)
+
+				String screenshotPath = new File(path).toURI().toString();
+
+				def link = (XSSFHyperlink) createHelper.createHyperlink(HyperlinkType.valueOf("FILE"));
+				link.setAddress(screenshotPath);
+				imgcell.setHyperlink(link);
+
+				FileOutputStream fos = new FileOutputStream(fileName);
+				workbook.write(fos);
+				fos.close();
+			}else {
+
+				XSSFWorkbook workbook = new XSSFWorkbook();
+				CreationHelper createHelper = workbook.getCreationHelper();
+
+				// Create a Font for styling header cells
+				Font headerFont = workbook.createFont();
+				headerFont.setBold(true);
+				headerFont.setFontHeightInPoints((short) 14);
+				headerFont.setColor(IndexedColors.GREEN.getIndex());
+
+				CellStyle headerCellStyle = workbook.createCellStyle();
+				headerCellStyle.setFont(headerFont);
+
+
+				XSSFSheet sheet = workbook.createSheet("Error_report");
+				Row rowHeader = sheet.createRow(0);
+
+				CellStyle bgStyle = workbook.createCellStyle();
+
+
+				//set header Row
+				data.eachWithIndex { entry, i ->
+					Cell cell = rowHeader.createCell(i)
+					cell.setCellValue(entry.key)
+					sheet.autoSizeColumn(i)
+					cell.setCellStyle(headerCellStyle)
+				}
+
+				Cell imgcellHeader = rowHeader.createCell(data.size() + 1);
+				imgcellHeader.setCellValue("Path To Screenshots")
+				imgcellHeader.setCellStyle(headerCellStyle)
+
+				Cell msgcellHeader = rowHeader.createCell(data.size() + 2);
+				msgcellHeader.setCellValue("url")
+				msgcellHeader.setCellStyle(headerCellStyle)
+
+				Cell msgcellHeader1 = rowHeader.createCell(data.size() + 3);
+				msgcellHeader1.setCellValue("Provider name")
+				msgcellHeader1.setCellStyle(headerCellStyle)
+
+				Cell msgcellHeader2 = rowHeader.createCell(data.size() + 4);
+				msgcellHeader2.setCellValue("contact_name")
+				msgcellHeader2.setCellStyle(headerCellStyle)
+
+				Cell msgcellHeader3 = rowHeader.createCell(data.size() + 5);
+				msgcellHeader3.setCellValue("Designation")
+				msgcellHeader3.setCellStyle(headerCellStyle)
+
+				Cell msgcellHeader4 = rowHeader.createCell(data.size() + 6);
+				msgcellHeader4.setCellValue("Address")
+				msgcellHeader4.setCellStyle(headerCellStyle)
+
+				Cell msgcellHeader5 = rowHeader.createCell(data.size() + 7);
+				msgcellHeader5.setCellValue("Website")
+				msgcellHeader5.setCellStyle(headerCellStyle)
+
+				Cell msgcellHeader6 = rowHeader.createCell(data.size() + 8);
+				msgcellHeader6.setCellValue("Services 1")
+				msgcellHeader6.setCellStyle(headerCellStyle)
+
+				Cell msgcellHeader7 = rowHeader.createCell(data.size() + 9);
+				msgcellHeader7.setCellValue("Services 2")
+				msgcellHeader7.setCellStyle(headerCellStyle)
+
+				Cell msg1cellHeader = rowHeader.createCell(data.size() + 10);
+				msg1cellHeader.setCellValue("Report")
+				msg1cellHeader.setCellStyle(headerCellStyle)
+
+				//add first row
+				Row firstRow = sheet.createRow(1);
+				data.eachWithIndex { entry, i ->
+					Cell cell = firstRow.createCell(i)
+					cell.setCellValue(entry.value)
+					sheet.autoSizeColumn(i)
+				}
+
+				if(reportErr)
+				{
+					Cell cell1 = firstRow.createCell(data.size() + 3)
+					cell1.setCellValue('Failed')
+					bgStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
+					bgStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+
+					cell1.setCellStyle(bgStyle)
+					sheet.autoSizeColumn(data.size() + 3)
+				}else {
+					Cell cell2 = firstRow.createCell(data.size() + 3)
+					cell2.setCellValue('Passed')
+					bgStyle.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
+					bgStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+					cell2.setCellStyle(bgStyle);
+					sheet.autoSizeColumn(data.size() + 3)
+				}
+
+				Font linkFont = workbook.createFont();
+				linkFont.setItalic(true);
+				linkFont.setFontHeightInPoints((short) 12);
+				linkFont.setColor(IndexedColors.BLUE.getIndex());
+
+				CellStyle linkFontStyle = workbook.createCellStyle();
+				linkFontStyle.setFont(linkFont);
+
+				String path = './Screenshots/' + timestamp + '.png';
+				String screenshotPath = new File(path).toURI().toString();
+				//create next cell
+				Cell imgcell = firstRow.createCell(data.size() + 1);
+				imgcell.setCellValue(path)
+				imgcell.setCellStyle(linkFontStyle)
+				sheet.autoSizeColumn(data.size() + 1)
+
+				Cell msgcell = firstRow.createCell(data.size() + 2);
+				msgcell.setCellValue(msg)
+				sheet.autoSizeColumn(data.size() + 2)
+
+
+				def link = (XSSFHyperlink) createHelper.createHyperlink(HyperlinkType.valueOf("FILE"));
+				link.setAddress(screenshotPath);
+				imgcell.setHyperlink(link);
+
+				FileOutputStream fos = new FileOutputStream(fileName);
+				workbook.write(fos);
+				fos.close();
+
+			}
+		} catch (FileNotFoundException e) {
+			Util.logger.logInfo(e.getMessage())
+		} catch (IOException e) {
+			Util.logger.logInfo(e.getMessage())
+		}
+
+	}
 
 
 	def static void reportAndtakeScreenshot(String tcName='', Map data = [:], String msg='',boolean reportErr=false) {

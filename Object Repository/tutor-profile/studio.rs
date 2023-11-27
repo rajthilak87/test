@@ -6,11 +6,11 @@
    <elementGuidId>7ec5a6d2-372d-4a6b-aea6-e89a3a518d26</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//span[normalize-space()='Studio']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//span[normalize-space()='In-person']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

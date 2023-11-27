@@ -34,7 +34,12 @@ for (def row : data)
         FailureHandling.CONTINUE_ON_FAILURE)
 		WebUtil.generateReport(testCaseName, filterBy)
 		//WebUI.delay(5)
+		String currentUrl = WebUI.getUrl(FailureHandling.CONTINUE_ON_FAILURE).toString()
+	
+		if (currentUrl.contains('dashboard'))
+		{
 		WebUI.callTestCase(findTestCase('Test Cases/Generic/Student Bookaclass General'), [('testCaseName') : testCaseName, ('testCaseData') : row], 
         FailureHandling.CONTINUE_ON_FAILURE)
+		}
 	}
 WebUI.closeBrowser(FailureHandling.CONTINUE_ON_FAILURE)

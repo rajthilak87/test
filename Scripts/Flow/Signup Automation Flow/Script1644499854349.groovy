@@ -19,7 +19,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://testprod.nurtem.com/')
+WebUI.navigateToUrl('https://nurtemevent.nurtem.com/')
 
 WebUI.click(findTestObject('tutorSignUp/button_Sign Up'))
 
